@@ -1,0 +1,5 @@
+{
+  "version": 9,
+  "structuredDefaults": "inherited",
+  "anchors": {"sdff":{"gv":{"gvViews":{"group":{"expandedElements":["sdff::parts"]}}}}}
+}
