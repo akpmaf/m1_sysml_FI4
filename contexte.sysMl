@@ -20,7 +20,7 @@ package SDFF {
 
     part def ContexteGlobal {
 
-        part technicien_de_maintenance : Operateur
+        part technicien_de_maintenance : Operateur;
         part sapeur_pompier : ServicesSecours;
         part sdff : DetectionFeuForet;    
         part garde_nature : ServicesSecours;
