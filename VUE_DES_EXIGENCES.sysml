@@ -53,19 +53,19 @@ package SDFF {
     
         
         /* exigences créées pour regrouper l'ensemble de manière hiérarchique */
-        requirement  contraintes specializes specificationsSDF {
+        requirement  contraintes specializes specificationsSDFF {
             doc /* le système doit respecter les contraintes ci-dessous */
         }
 
-        requirement  fonctions specializes specificationsSDF {
+        requirement  fonctions specializes specificationsSDFF {
             doc /* le système doit comprendre les fonctions listées ci-dessous */
         }
 
-        requirement  interactionsMaterielles specializes specificationsSDF {
+        requirement  interactionsMaterielles specializes specificationsSDFF {
             doc /* le système doit pouvoir disposer des interactions matérielles listées */
         }
 
-        requirement specificationsSDF {
+        requirement specificationsSDFF {
             doc /* le système répond aux catégories d'exigences listées ci-dessous */
         }
     }
