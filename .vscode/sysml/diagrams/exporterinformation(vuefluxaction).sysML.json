@@ -1,0 +1,561 @@
+{
+  "version": 9,
+  "structuredDefaults": "inherited",
+  "anchors": {
+    "SDFF": {
+      "afv": {
+        "layout": {
+          "SDFF::exporterInformation": {
+            "x": 22,
+            "y": 22,
+            "parentKey": null,
+            "w": 1038,
+            "h": 1182
+          },
+          "SDFF::exporterInformation/__initial__": {
+            "x": 622,
+            "y": 38,
+            "parentKey": "SDFF::exporterInformation",
+            "w": 12,
+            "h": 12
+          },
+          "SDFF::exporterInformation/SDFF::exporterInformation::recevoirDemandeExportation": {
+            "x": 529,
+            "y": 132,
+            "parentKey": "SDFF::exporterInformation",
+            "w": 198,
+            "h": 58
+          },
+          "SDFF::exporterInformation/SDFF::exporterInformation::selectionnerInformations": {
+            "x": 536,
+            "y": 272,
+            "parentKey": "SDFF::exporterInformation",
+            "w": 184,
+            "h": 58
+          },
+          "SDFF::exporterInformation/SDFF::exporterInformation::verifierInformations": {
+            "x": 544,
+            "y": 412,
+            "parentKey": "SDFF::exporterInformation",
+            "w": 168,
+            "h": 58
+          },
+          "SDFF::exporterInformation/SDFF::exporterInformation::preparerFichier": {
+            "x": 544,
+            "y": 552,
+            "parentKey": "SDFF::exporterInformation",
+            "w": 168,
+            "h": 58
+          },
+          "SDFF::exporterInformation/SDFF::exporterInformation::exporterFichier": {
+            "x": 544,
+            "y": 692,
+            "parentKey": "SDFF::exporterInformation",
+            "w": 168,
+            "h": 58
+          },
+          "SDFF::exporterInformation/SDFF::exporterInformation::transmettreFichier": {
+            "x": 22,
+            "y": 962,
+            "parentKey": "SDFF::exporterInformation",
+            "w": 168,
+            "h": 58
+          },
+          "SDFF::exporterInformation/SDFF::exporterInformation::confirmerExportation": {
+            "x": 248,
+            "y": 962,
+            "parentKey": "SDFF::exporterInformation",
+            "w": 168,
+            "h": 58
+          },
+          "SDFF::exporterInformation/SDFF::exporterInformation::afficherMessageErreur": {
+            "x": 548,
+            "y": 962,
+            "parentKey": "SDFF::exporterInformation",
+            "w": 168,
+            "h": 58
+          },
+          "SDFF::exporterInformation/SDFF::exporterInformation::decisionExportation": {
+            "x": 491,
+            "y": 832,
+            "parentKey": "SDFF::exporterInformation",
+            "w": 212,
+            "h": 48
+          },
+          "SDFF::exporterInformation/SDFF::exporterInformation::repriseExportation": {
+            "x": 774,
+            "y": 962,
+            "parentKey": "SDFF::exporterInformation",
+            "w": 202,
+            "h": 48
+          },
+          "SDFF::exporterInformation/__final__": {
+            "x": 477.4477911493465,
+            "y": 1017.1646583895435,
+            "parentKey": "SDFF::exporterInformation",
+            "w": 16,
+            "h": 16,
+            "placedByHand": true
+          },
+          "SDFF::exporterInformation::demandeExportation": {
+            "x": 22,
+            "y": 1102,
+            "parentKey": "SDFF::exporterInformation",
+            "w": 211,
+            "h": 58
+          },
+          "SDFF::exporterInformation::exportationReussie": {
+            "x": 257,
+            "y": 1102,
+            "parentKey": "SDFF::exporterInformation",
+            "w": 211,
+            "h": 58
+          }
+        },
+        "ports": {},
+        "edgeRoutes": {},
+        "edgeAnchors": {},
+        "edgeGeometry": {
+          "succession:SDFF::exporterInformation/__initial__->SDFF::exporterInformation/SDFF::exporterInformation::recevoirDemandeExportation": {
+            "sourceHandle": "bottom",
+            "targetHandle": "top",
+            "path": "M 650,72 L 650,154",
+            "lineStyle": "orthogonal",
+            "sourcePoint": {
+              "x": 650,
+              "y": 72
+            },
+            "targetPoint": {
+              "x": 650,
+              "y": 154
+            },
+            "label": {
+              "x": 650,
+              "y": 113
+            },
+            "points": [
+              {
+                "x": 650,
+                "y": 72
+              },
+              {
+                "x": 650,
+                "y": 154
+              }
+            ],
+            "corner": 8
+          },
+          "succession:SDFF::exporterInformation/SDFF::exporterInformation::recevoirDemandeExportation->SDFF::exporterInformation/SDFF::exporterInformation::selectionnerInformations": {
+            "sourceHandle": "bottom",
+            "targetHandle": "top",
+            "path": "M 650,212 L 650,294",
+            "lineStyle": "orthogonal",
+            "sourcePoint": {
+              "x": 650,
+              "y": 212
+            },
+            "targetPoint": {
+              "x": 650,
+              "y": 294
+            },
+            "label": {
+              "x": 650,
+              "y": 253
+            },
+            "points": [
+              {
+                "x": 650,
+                "y": 212
+              },
+              {
+                "x": 650,
+                "y": 294
+              }
+            ],
+            "corner": 8
+          },
+          "succession:SDFF::exporterInformation/SDFF::exporterInformation::selectionnerInformations->SDFF::exporterInformation/SDFF::exporterInformation::verifierInformations": {
+            "sourceHandle": "bottom",
+            "targetHandle": "top",
+            "path": "M 650,352 L 650,434",
+            "lineStyle": "orthogonal",
+            "sourcePoint": {
+              "x": 650,
+              "y": 352
+            },
+            "targetPoint": {
+              "x": 650,
+              "y": 434
+            },
+            "label": {
+              "x": 650,
+              "y": 393
+            },
+            "points": [
+              {
+                "x": 650,
+                "y": 352
+              },
+              {
+                "x": 650,
+                "y": 434
+              }
+            ],
+            "corner": 8
+          },
+          "succession:SDFF::exporterInformation/SDFF::exporterInformation::verifierInformations->SDFF::exporterInformation/SDFF::exporterInformation::preparerFichier": {
+            "sourceHandle": "bottom",
+            "targetHandle": "top",
+            "path": "M 650,492 L 650,574",
+            "lineStyle": "orthogonal",
+            "sourcePoint": {
+              "x": 650,
+              "y": 492
+            },
+            "targetPoint": {
+              "x": 650,
+              "y": 574
+            },
+            "label": {
+              "x": 650,
+              "y": 533
+            },
+            "points": [
+              {
+                "x": 650,
+                "y": 492
+              },
+              {
+                "x": 650,
+                "y": 574
+              }
+            ],
+            "corner": 8
+          },
+          "succession:SDFF::exporterInformation/SDFF::exporterInformation::preparerFichier->SDFF::exporterInformation/SDFF::exporterInformation::exporterFichier": {
+            "sourceHandle": "bottom",
+            "targetHandle": "top",
+            "path": "M 650,632 L 650,714",
+            "lineStyle": "orthogonal",
+            "sourcePoint": {
+              "x": 650,
+              "y": 632
+            },
+            "targetPoint": {
+              "x": 650,
+              "y": 714
+            },
+            "label": {
+              "x": 650,
+              "y": 673
+            },
+            "points": [
+              {
+                "x": 650,
+                "y": 632
+              },
+              {
+                "x": 650,
+                "y": 714
+              }
+            ],
+            "corner": 8
+          },
+          "succession:SDFF::exporterInformation/SDFF::exporterInformation::exporterFichier->SDFF::exporterInformation/SDFF::exporterInformation::decisionExportation": {
+            "sourceHandle": "bottom",
+            "targetHandle": "top",
+            "path": "M 650,772 L 650,828 Q 650,836 642,836 L 627,836 Q 619,836 619,844 L 619,854",
+            "lineStyle": "orthogonal",
+            "sourcePoint": {
+              "x": 650,
+              "y": 772
+            },
+            "targetPoint": {
+              "x": 619,
+              "y": 854
+            },
+            "label": {
+              "x": 650,
+              "y": 828.5
+            },
+            "points": [
+              {
+                "x": 650,
+                "y": 772
+              },
+              {
+                "x": 650,
+                "y": 836
+              },
+              {
+                "x": 619,
+                "y": 836
+              },
+              {
+                "x": 619,
+                "y": 854
+              }
+            ],
+            "corner": 8
+          },
+          "succession:SDFF::exporterInformation/SDFF::exporterInformation::decisionExportation->SDFF::exporterInformation/SDFF::exporterInformation::transmettreFichier:[exportationReussie]": {
+            "caption": {
+              "x": 367,
+              "y": 869,
+              "width": 144,
+              "height": 18,
+              "lines": [
+                "[exportationReussie]"
+              ],
+              "text": "[exportationReussie]",
+              "source": {
+                "x": 513,
+                "y": 878
+              },
+              "target": {
+                "x": 128,
+                "y": 984
+              },
+              "lineStyle": "orthogonal",
+              "conflicts": 0,
+              "crossings": 0
+            },
+            "sourceHandle": "left",
+            "targetHandle": "top",
+            "path": "M 513,878 L 136,878 Q 128,878 128,886 L 128,984",
+            "lineStyle": "orthogonal",
+            "sourcePoint": {
+              "x": 513,
+              "y": 878
+            },
+            "targetPoint": {
+              "x": 128,
+              "y": 984
+            },
+            "label": {
+              "x": 267.5,
+              "y": 878
+            },
+            "points": [
+              {
+                "x": 513,
+                "y": 878
+              },
+              {
+                "x": 128,
+                "y": 878
+              },
+              {
+                "x": 128,
+                "y": 984
+              }
+            ],
+            "corner": 8
+          },
+          "succession:SDFF::exporterInformation/SDFF::exporterInformation::decisionExportation->SDFF::exporterInformation/SDFF::exporterInformation::confirmerExportation": {
+            "sourceHandle": "bottom:0.250",
+            "targetHandle": "top",
+            "path": "M 566,890 L 566,900 Q 566,908 558,908 L 362,908 Q 354,908 354,916 L 354,984",
+            "lineStyle": "orthogonal",
+            "sourcePoint": {
+              "x": 566,
+              "y": 890
+            },
+            "targetPoint": {
+              "x": 354,
+              "y": 984
+            },
+            "label": {
+              "x": 431,
+              "y": 908
+            },
+            "points": [
+              {
+                "x": 566,
+                "y": 890
+              },
+              {
+                "x": 566,
+                "y": 908
+              },
+              {
+                "x": 354,
+                "y": 908
+              },
+              {
+                "x": 354,
+                "y": 984
+              }
+            ],
+            "corner": 8
+          },
+          "succession:SDFF::exporterInformation/SDFF::exporterInformation::decisionExportation->SDFF::exporterInformation/__final__": {
+            "sourceHandle": "bottom",
+            "targetHandle": "top",
+            "path": "M 619,902 L 619,912 Q 619,920 611,920 L 515.448,920 Q 507.448,920 507.448,928 L 507.448,1039.165",
+            "lineStyle": "orthogonal",
+            "sourcePoint": {
+              "x": 619,
+              "y": 902
+            },
+            "targetPoint": {
+              "x": 507.4477911493465,
+              "y": 1039.1646583895435
+            },
+            "label": {
+              "x": 512.6415663799014,
+              "y": 920
+            },
+            "points": [
+              {
+                "x": 619,
+                "y": 902
+              },
+              {
+                "x": 619,
+                "y": 920
+              },
+              {
+                "x": 507.4477911493465,
+                "y": 920
+              },
+              {
+                "x": 507.4477911493465,
+                "y": 1039.1646583895435
+              }
+            ],
+            "corner": 8
+          },
+          "succession:SDFF::exporterInformation/SDFF::exporterInformation::decisionExportation->SDFF::exporterInformation/SDFF::exporterInformation::afficherMessageErreur:[not exportationReussie]": {
+            "caption": {
+              "x": 587.5,
+              "y": 923,
+              "width": 169,
+              "height": 18,
+              "lines": [
+                "[not exportationReussie]"
+              ],
+              "text": "[not exportationReussie]",
+              "source": {
+                "x": 672,
+                "y": 890
+              },
+              "target": {
+                "x": 654,
+                "y": 984
+              },
+              "lineStyle": "orthogonal",
+              "conflicts": 0,
+              "crossings": 0
+            },
+            "sourceHandle": "bottom:0.750",
+            "targetHandle": "top",
+            "path": "M 672,890 L 672,958 Q 672,966 664,966 L 662,966 Q 654,966 654,974 L 654,984",
+            "lineStyle": "orthogonal",
+            "sourcePoint": {
+              "x": 672,
+              "y": 890
+            },
+            "targetPoint": {
+              "x": 654,
+              "y": 984
+            },
+            "label": {
+              "x": 672,
+              "y": 946
+            },
+            "points": [
+              {
+                "x": 672,
+                "y": 890
+              },
+              {
+                "x": 672,
+                "y": 966
+              },
+              {
+                "x": 654,
+                "y": 966
+              },
+              {
+                "x": 654,
+                "y": 984
+              }
+            ],
+            "corner": 8
+          },
+          "succession:SDFF::exporterInformation/SDFF::exporterInformation::decisionExportation->SDFF::exporterInformation/SDFF::exporterInformation::repriseExportation": {
+            "sourceHandle": "right",
+            "targetHandle": "top",
+            "path": "M 725,878 L 889,878 Q 897,878 897,886 L 897,984",
+            "lineStyle": "orthogonal",
+            "sourcePoint": {
+              "x": 725,
+              "y": 878
+            },
+            "targetPoint": {
+              "x": 897,
+              "y": 984
+            },
+            "label": {
+              "x": 864,
+              "y": 878
+            },
+            "points": [
+              {
+                "x": 725,
+                "y": 878
+              },
+              {
+                "x": 897,
+                "y": 878
+              },
+              {
+                "x": 897,
+                "y": 984
+              }
+            ],
+            "corner": 8
+          },
+          "succession:SDFF::exporterInformation/SDFF::exporterInformation::repriseExportation->SDFF::exporterInformation/SDFF::exporterInformation::selectionnerInformations": {
+            "sourceHandle": "right",
+            "targetHandle": "right",
+            "path": "M 998,1008 L 1008,1008 Q 1016,1008 1016,1000 L 1016,331 Q 1016,323 1008,323 L 742,323",
+            "lineStyle": "orthogonal",
+            "sourcePoint": {
+              "x": 998,
+              "y": 1008
+            },
+            "targetPoint": {
+              "x": 742,
+              "y": 323
+            },
+            "label": {
+              "x": 1016,
+              "y": 537.5
+            },
+            "points": [
+              {
+                "x": 998,
+                "y": 1008
+              },
+              {
+                "x": 1016,
+                "y": 1008
+              },
+              {
+                "x": 1016,
+                "y": 323
+              },
+              {
+                "x": 742,
+                "y": 323
+              }
+            ],
+            "corner": 8
+          }
+        }
+      }
+    }
+  }
+}
