@@ -1,22 +1,22 @@
 package sdff {
     private import sdff::parts::*;
 
-    package sequences {
-        occurrence alerterPompierS1 {
-            part capteurFeu : CapteurFeu;
-            part dispositif : Dispositif;
+        package sequences {
+
+        occurrence alerterPompier {
+            part detecteur : DetecteurFeu;
+            part dispositif : DispositifDetection;
             part moduleRadio : ModuleRadio;
             part passerelle : Passerelle;
-            part terminalSecours : TerminalSecours;
+            part infrastructureDistante : InfrastructureReceptionDistante;
 
-            message alerterPompier from capteurFeu to dispositif;
+            message alerterPompier from detecteur to dispositif;
             message envoyer of Alerte from dispositif to moduleRadio;
             message transmettre of Alerte from moduleRadio to passerelle;
-            message relayer of Alerte from passerelle to terminalSecours;
-            message from terminalSecours to passerelle;
+            message relayer of Alerte from passerelle to infrastructureDistante;
+            message from infrastructureDistante to passerelle;
             message accuse of AccuseReception from passerelle to moduleRadio;
             message from moduleRadio to dispositif;
-            message from dispositif to capteurFeu;
-        }
+            message from dispositif to detecteur;        }
     }
 }
