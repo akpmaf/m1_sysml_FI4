@@ -1,45 +1,46 @@
-package SDFF {
+package sequences {
 
-    // IMPORTATION DES ELEMENTS DU CONTEXTE
     private import SDFF::*;
+  part def DetectionFeuForet;
+    part def ServicesSecours;
+    part def AgentForestier;
+    part def InfrastructureReceptionDistante;
+    part def ReseauCommunication;
+     part def AutoritesLocales;
+    occurrence notifierAlerteFeu {
 
-    package sequences {
+        // ELEMENTS DU SYSTEME
+        part systeme : DetectionFeuForet;
+        part reseau : ReseauCommunication;
+        part infrastructureDistante : InfrastructureReceptionDistante;
 
-        occurrence notifierAlerteFeu {
+        // DESTINATAIRES
+        part pompier : ServicesSecours;
+        part gardeNature : AgentForestier;
+        part autorites : AutoritesLocales;
 
-            // ELEMENTS DU SYSTEME
-            part systeme : DetectionFeuForet;
-            part reseau : ReseauCommunication;
-            part infrastructureDistante : InfrastructureReceptionDistante;
+        // TRANSMISSION DE L'ALERTE
+        message detecterIncendie
+            from systeme to reseau;
 
-            // DESTINATAIRES DE L'ALERTE
-            part pompier : ServicesSecours;
-            part gardeNature : AgentForestier;
-            part autorites : AutoritesLocales;
+        message transmettreAlerte
+            from reseau to infrastructureDistante;
 
-            // DETECTION ET TRANSMISSION
-            message detecterIncendie
-                from systeme to reseau;
+        // NOTIFICATION
+        message notifierServicesSecours
+            from infrastructureDistante to pompier;
 
-            message transmettreAlerte
-                from reseau to infrastructureDistante;
+        message notifierAgentForestier
+            from infrastructureDistante to gardeNature;
 
-            // NOTIFICATION DES DESTINATAIRES
-            message notifierServicesSecours
-                from infrastructureDistante to pompier;
+        message notifierAutorites
+            from infrastructureDistante to autorites;
 
-            message notifierAgentForestier
-                from infrastructureDistante to gardeNature;
+        // CONFIRMATION
+        message confirmerReception
+            from infrastructureDistante to reseau;
 
-            message notifierAutorites
-                from infrastructureDistante to autorites;
-
-            // CONFIRMATION DE RECEPTION
-            message confirmerReception
-                from infrastructureDistante to reseau;
-
-            message confirmerTransmission
-                from reseau to systeme;
-        }
+        message confirmerTransmission
+            from reseau to systeme;
     }
 }
