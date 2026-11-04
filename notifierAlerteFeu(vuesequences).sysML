@@ -1,38 +1,45 @@
-package sdff {
+package SDFF {
 
-    private import sdff::parts::*;
+    // IMPORTATION DES ELEMENTS DU CONTEXTE
+    private import SDFF::*;
 
     package sequences {
 
         occurrence notifierAlerteFeu {
 
-            part detecteur : DetecteurFeu;
-            part dispositif : DispositifDetection;
-            part moduleRadio : ModuleRadio;
-            part passerelle : Passerelle;
+            // ELEMENTS DU SYSTEME
+            part systeme : DetectionFeuForet;
+            part reseau : ReseauCommunication;
             part infrastructureDistante : InfrastructureReceptionDistante;
-            part operateurQG : OperateurQG;
 
-            message notifierAlerteFeu
-                from detecteur to dispositif;
+            // DESTINATAIRES DE L'ALERTE
+            part pompier : ServicesSecours;
+            part gardeNature : AgentForestier;
+            part autorites : AutoritesLocales;
 
-            message envoyer of Alerte
-                from dispositif to moduleRadio;
+            // DETECTION ET TRANSMISSION
+            message detecterIncendie
+                from systeme to reseau;
 
-            message transmettre of Alerte
-                from moduleRadio to passerelle;
+            message transmettreAlerte
+                from reseau to infrastructureDistante;
 
-            message relayer of Alerte
-                from passerelle to infrastructureDistante;
+            // NOTIFICATION DES DESTINATAIRES
+            message notifierServicesSecours
+                from infrastructureDistante to pompier;
 
-            message notifier of Alerte
-                from infrastructureDistante to operateurQG;
+            message notifierAgentForestier
+                from infrastructureDistante to gardeNature;
 
-            message consulterAlerte
-                from operateurQG to infrastructureDistante;
+            message notifierAutorites
+                from infrastructureDistante to autorites;
 
-            message confirmerReception of AccuseReception
-                from operateurQG to infrastructureDistante;
+            // CONFIRMATION DE RECEPTION
+            message confirmerReception
+                from infrastructureDistante to reseau;
+
+            message confirmerTransmission
+                from reseau to systeme;
         }
     }
 }
