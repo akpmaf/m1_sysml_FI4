@@ -1,20 +1,20 @@
+package sdff {
 
-sequenceDiagram
-    autonumber
-    actor Capteur
-    participant Systeme as SystemeSurveillance
-    participant Service as ServiceNotification
-    actor Operateur as OperateurQG
+    part def Capteur;
+    part def SystemeSurveillance;
+    part def ServiceNotification;
+    part def OperateurQG;
 
-    Capteur->>Systeme: transmettreDonnees()
-    Systeme->>Systeme: analyserDonnees()
+    part capteur : Capteur;
+    part systeme : SystemeSurveillance;
+    part service : ServiceNotification;
+    part operateur : OperateurQG;
 
-    alt Incendie détecté
-        Systeme->>Systeme: genererAlerte()
-        Systeme->>Service: transmettreAlerte()
-        Service->>Operateur: notifierAlerteFeu()
-        Operateur->>Service: consulterAlerte()
-        Service-->>Operateur: afficherDetailsAlerte()
-    else Aucun incendie détecté
-        Systeme->>Systeme: poursuivreSurveillance()
-    end
+    occurrence def TransmissionDonnees;
+    occurrence def AnalyseDonnees;
+    occurrence def GenerationAlerte;
+    occurrence def TransmissionAlerte;
+    occurrence def NotificationOperateur;
+    occurrence def ConsultationAlerte;
+
+}
