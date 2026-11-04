@@ -44,7 +44,7 @@ package SDFF {
         flow alimente from batterie to sdff;
         flow transmet from sdff to infrastructureDistante;
         flow transmet from infrastructureDistante to sdff;
-        flow localise from sdff to  Gps; 
+        flow localise from Gps to  sdff; 
 
     }
 }
