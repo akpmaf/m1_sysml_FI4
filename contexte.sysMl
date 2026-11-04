@@ -3,48 +3,63 @@ package SDFF {
     //ACTEURS 
     part def Operateur;
     part def ServicesSecours;
+    part def AgentForestier;
+    part def AutoritesLocales;
 
-
-
-
-
-    //CONTEXTES
-    part def DetectionFeuForet;
+// ELEMENTS EXTERIEURS
     part def EnvironnementNaturel;
+    part def PhenomenesNaturels;
     part def SourceEnergie;
     part def InfrastructureReceptionDistante;
-    part def Localisation;
-    part def Alarmes;
+    part def ReseauCommunication;
 
-    
+ // SYSTEME ETUDIE
+    part def DetectionFeuForet;
 
     part def ContexteGlobal {
 
+        // ACTEURS
         part technicien_de_maintenance : Operateur;
         part sapeur_pompier : ServicesSecours;
-        part sdff : DetectionFeuForet;    
-        part garde_nature : ServicesSecours;
-   
-        
-        part environnement : EnvironnementNaturel;
-        part conditions_meteo : EnvironnementNaturel;
-        part soleil : SourceEnergie;
-        part batterie : SourceEnergie;
-        part infrastructureDistante : InfrastructureReceptionDistante;
-        part Gps : Localisation;
-        part siren_sonore : Alarmes ;
+        part garde_nature : AgentForestier;
+        part autorites : AutoritesLocales;
 
+        // SYSTEME
+        part sdff : DetectionFeuForet;
+
+        // ENVIRONNEMENT
+        part environnement : EnvironnementNaturel;
+        part incendie : PhenomenesNaturels;
+        part fumee : PhenomenesNaturels;
+        part vent : PhenomenesNaturels;
+        part conditions_meteo : PhenomenesNaturels;
+
+        // ENERGIE EXTERIEURE
+        part soleil : SourceEnergie;
+
+        // INFRASTRUCTURES EXTERIEURES
+        part infrastructureDistante : InfrastructureReceptionDistante;
+        part reseau : ReseauCommunication;
+
+        // INTERACTIONS AVEC LES ACTEURS
         flow utilise from sapeur_pompier to sdff;
         flow utilise from garde_nature to sdff;
-        flow maintien from technicien_de_maintenance to sdff;
-        flow Expose from environnement to sdff;
+        flow supervise from technicien_de_maintenance to sdff;
+        flow informe from sdff to autorites;
 
-        flow fournis from conditions_meteo to sdff;
-        flow alimente from soleil to sdff;
-        flow alimente from batterie to sdff;
-        flow transmet from sdff to infrastructureDistante;
+        // INTERACTIONS AVEC L'ENVIRONNEMENT
+        flow influence from environnement to sdff;
+        flow detecte from incendie to sdff;
+        flow detecte from fumee to sdff;
+        flow influence from vent to sdff;
+        flow fournit from conditions_meteo to sdff;
+
+        // INTERACTION ENERGETIQUE
+        flow energie from soleil to sdff;
+
+        // COMMUNICATION
+        flow transmet from sdff to reseau;
+        flow transmet from reseau to infrastructureDistante;
         flow transmet from infrastructureDistante to sdff;
-        flow localise from sdff to  Gps; 
-
     }
 }
