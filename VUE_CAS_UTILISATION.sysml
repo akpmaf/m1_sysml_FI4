@@ -5,7 +5,7 @@ package sdff {
         part def OperateurQG;
         part def Technicien;
 
-        /* contexte *
+        /* contexte */
         part def SystemeDetectionFeu;
     }
 
@@ -18,7 +18,7 @@ package sdff {
         use case notifierAlerteFeu {
             ref actor operateurQG;
         }
-        use case sauvegarderInformations {
+        use case exporterInformations {
             ref actor operateurQG;
         }
         use case surveillerEtatSysteme {

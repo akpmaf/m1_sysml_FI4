@@ -50,11 +50,15 @@ package SDFF {
             doc /* le système doit résister aux intempéries (pluie-température-vent) */
         }
          requirement detectionPrecoce specializes contraintes {
-            doc /* le système doit résister aux intempéries (pluie-température-vent) */
+            doc /* Le système doit détecter les premiers signes d'un départ de feu dès leur apparition. */
         }
          requirement limitationFaussesAlertes specializes contraintes {
-            doc /* le système doit résister aux intempéries (pluie-température-vent) */
+            doc /* Le taux de fausses alertes ne doit pas dépasser 2 % des alertes déclenchées. */
         }
+        requirement preventionIncendie specializes fonctions {
+            doc /* Le système doit évaluer le risque de départ d'incendie jusqu'à 24 heures à l'avance à partir des paramètres environnementaux. */
+        }
+
         
         /* exigences créées pour regrouper l'ensemble de manière hiérarchique */
         requirement  contraintes specializes specificationsSDFF {
