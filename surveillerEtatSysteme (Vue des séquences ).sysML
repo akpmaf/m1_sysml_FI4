@@ -1,6 +1,8 @@
 package sdff {
     private import ScalarValues::Boolean;
     part def NiveauEnergie;
+    part def InterfaceSupervision;
+    part def ModuleEnergie;
     part def QualiteLiaison;
     part def EtatDispositif;
     part def EtatSysteme;
