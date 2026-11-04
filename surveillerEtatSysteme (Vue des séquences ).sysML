@@ -7,6 +7,9 @@ package sdff {
     part def EtatDispositif;
     part def EtatSysteme;
     part def DispositifEnPanne;
+    part def ModuleRadio;
+    part def Passerelle;
+    part def DispositifDetection;
 
     // Scénario 1 : tous les dispositifs répondent
         occurrence surveillerEtatSystemeS1 {
