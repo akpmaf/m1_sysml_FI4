@@ -6,68 +6,72 @@
       "afv": {
         "layout": {
           "sdff::configurerSysteme": {
-            "x": 22,
-            "y": 22,
+            "x": 1437,
+            "y": 1067,
             "parentKey": null,
-            "w": 2321.5,
-            "h": 2834
+            "w": 760,
+            "h": 1542,
+            "placedByHand": true
           },
           "sdff::configurerSysteme/__initial__": {
-            "x": 1563,
-            "y": 1342,
+            "x": 270.2973967099938,
+            "y": 131.07323810490175,
             "parentKey": "sdff::configurerSysteme",
             "w": 12,
-            "h": 12
+            "h": 12,
+            "placedByHand": true
           },
           "sdff::configurerSysteme/sdff::configurerSysteme::lancerRechercheDispositif": {
-            "x": 1473,
-            "y": 1436,
+            "x": 180.74349177498493,
+            "y": 317.02235463027887,
             "parentKey": "sdff::configurerSysteme",
             "w": 191,
-            "h": 58
+            "h": 58,
+            "placedByHand": true
           },
           "sdff::configurerSysteme/sdff::configurerSysteme::etablirCommunicationAvecDispositif": {
-            "x": 1279.7499999999998,
-            "y": 1556.0000000000002,
+            "x": 149.49349177498448,
+            "y": 423.98146614530015,
             "parentKey": "sdff::configurerSysteme",
             "w": 252,
             "h": 58,
             "placedByHand": true
           },
           "sdff::configurerSysteme/sdff::configurerSysteme::configurerCommunicationRadio": {
-            "x": 1280.2499999999998,
-            "y": 1792.2500000000002,
+            "x": 168.5063657192161,
+            "y": 659.9489250202257,
             "parentKey": "sdff::configurerSysteme",
             "w": 211,
             "h": 58,
             "placedByHand": true
           },
           "sdff::configurerSysteme/sdff::configurerSysteme::configurerParametresDetection": {
-            "x": 1621,
-            "y": 1976,
+            "x": 164.646859220107,
+            "y": 775.9257220754007,
             "parentKey": "sdff::configurerSysteme",
             "w": 218,
-            "h": 58
+            "h": 58,
+            "placedByHand": true
           },
           "sdff::configurerSysteme/sdff::configurerSysteme::configurerLocalisation": {
-            "x": 1648.2499999999995,
-            "y": 2118.5000000000005,
+            "x": 187.3020658001185,
+            "y": 878.221279650505,
             "parentKey": "sdff::configurerSysteme",
             "w": 171,
             "h": 58,
             "placedByHand": true
           },
           "sdff::configurerSysteme/sdff::configurerSysteme::verifierConfiguration": {
-            "x": 1662.4999999999998,
-            "y": 2234.75,
+            "x": 187.76768554015416,
+            "y": 989.8764862305165,
             "parentKey": "sdff::configurerSysteme",
             "w": 168,
             "h": 58,
             "placedByHand": true
           },
           "sdff::configurerSysteme/sdff::configurerSysteme::enregistrerConfiguration": {
-            "x": 1666.4999999999998,
-            "y": 2332.2500000000005,
+            "x": 180.06574177782136,
+            "y": 1099.0788507220486,
             "parentKey": "sdff::configurerSysteme",
             "w": 184,
             "h": 58,
@@ -81,16 +85,16 @@
             "h": 58
           },
           "sdff::configurerSysteme/sdff::configurerSysteme::confirmerConfiguration": {
-            "x": 1682.5,
-            "y": 2430.71875,
+            "x": 186.3208538661072,
+            "y": 1199.7085625340587,
             "parentKey": "sdff::configurerSysteme",
             "w": 171,
             "h": 58,
             "placedByHand": true
           },
           "sdff::configurerSysteme/sdff::configurerSysteme::decide0": {
-            "x": 1335.582911695997,
-            "y": 1673.7124401291019,
+            "x": 228.92119689096967,
+            "y": 527.2961987397489,
             "parentKey": "sdff::configurerSysteme",
             "w": 92,
             "h": 48,
@@ -139,8 +143,8 @@
             "h": 48
           },
           "sdff::configurerSysteme/sdff::configurerSysteme::merge0": {
-            "x": 1862.2499999999986,
-            "y": 1568.5000000000005,
+            "x": 235.09394510544053,
+            "y": 198.2027457958045,
             "parentKey": "sdff::configurerSysteme",
             "w": 82,
             "h": 48,
@@ -189,11 +193,12 @@
             "h": 48
           },
           "sdff::configurerSysteme/__final__": {
-            "x": 1528,
-            "y": 2656,
+            "x": 263.70917023895504,
+            "y": 1298.038487066793,
             "parentKey": "sdff::configurerSysteme",
             "w": 16,
-            "h": 16
+            "h": 16,
+            "placedByHand": true
           },
           "sdff::configurerSysteme::dispositifTrouve": {
             "x": 22,
@@ -203,11 +208,12 @@
             "h": 58
           },
           "sdff::configurerSysteme::communicationEtablie": {
-            "x": 244,
-            "y": 2754,
+            "x": 37.89395801197361,
+            "y": 1449.5111060622407,
             "parentKey": "sdff::configurerSysteme",
             "w": 225,
-            "h": 58
+            "h": 58,
+            "placedByHand": true
           },
           "sdff::configurerSysteme::radioConfiguree": {
             "x": 493,
@@ -246,8 +252,68 @@
           }
         },
         "ports": {},
-        "edgeRoutes": {},
-        "edgeAnchors": {},
+        "edgeRoutes": {
+          "succession:sdff::configurerSysteme/sdff::configurerSysteme::decide0->sdff::configurerSysteme/sdff::configurerSysteme::merge0:[not communicationEtablie]": [
+            {
+              "x": 1952,
+              "y": 1614
+            },
+            {
+              "x": 1952,
+              "y": 1601
+            },
+            {
+              "x": 1952,
+              "y": 1582
+            },
+            {
+              "x": 1952,
+              "y": 1528
+            },
+            {
+              "x": 1952,
+              "y": 1437
+            },
+            {
+              "x": 1952,
+              "y": 1383
+            },
+            {
+              "x": 1952,
+              "y": 1340
+            },
+            {
+              "x": 1952,
+              "y": 1291
+            }
+          ]
+        },
+        "edgeAnchors": {
+          "succession:sdff::configurerSysteme/sdff::configurerSysteme::etablirCommunicationAvecDispositif->sdff::configurerSysteme/sdff::configurerSysteme::decide0": {
+            "sourceHandle": "bottom",
+            "targetHandle": "top"
+          },
+          "succession:sdff::configurerSysteme/sdff::configurerSysteme::decide0->sdff::configurerSysteme/sdff::configurerSysteme::merge0:[not communicationEtablie]": {
+            "sourceHandle": "right",
+            "targetHandle": "right"
+          },
+          "succession:sdff::configurerSysteme/sdff::configurerSysteme::merge0->sdff::configurerSysteme/sdff::configurerSysteme::lancerRechercheDispositif": {
+            "sourceHandle": "bottom",
+            "targetHandle": "top"
+          },
+          "succession:sdff::configurerSysteme/sdff::configurerSysteme::lancerRechercheDispositif->sdff::configurerSysteme/sdff::configurerSysteme::etablirCommunicationAvecDispositif": {
+            "sourceHandle": "bottom",
+            "targetHandle": "top"
+          },
+          "succession:sdff::configurerSysteme/sdff::configurerSysteme::enregistrerConfiguration->sdff::configurerSysteme/sdff::configurerSysteme::confirmerConfiguration": {
+            "sourceHandle": "bottom",
+            "targetHandle": "top"
+          },
+          "succession:sdff::configurerSysteme/sdff::configurerSysteme::configurerLocalisation->sdff::configurerSysteme/sdff::configurerSysteme::verifierConfiguration": {
+            "sourceHandle": "bottom",
+            "targetHandle": "top"
+          }
+        },
         "edgeGeometry": {
           "succession:sdff::configurerSysteme/__initial__->sdff::configurerSysteme/sdff::configurerSysteme::lancerRechercheDispositif": {
             "sourceHandle": "bottom",
@@ -469,38 +535,38 @@
             "corner": 8
           },
           "succession:sdff::configurerSysteme/sdff::configurerSysteme::merge0->sdff::configurerSysteme/sdff::configurerSysteme::lancerRechercheDispositif": {
-            "sourceHandle": "right",
-            "targetHandle": "right",
-            "path": "M 1966.25,1614.5 L 1976.25,1614.5 Q 1984.25,1614.5 1984.25,1606.5 L 1984.25,1495 Q 1984.25,1487 1976.25,1487 L 1686,1487",
+            "sourceHandle": "bottom",
+            "targetHandle": "top",
+            "path": "M 1713.094,1313.203 L 1713.094,1365.948 Q 1713.094,1366.022 1713.169,1366.022 L 1713.169,1366.022 Q 1713.243,1366.022 1713.243,1366.097 L 1713.243,1384.022",
             "lineStyle": "orthogonal",
             "sourcePoint": {
-              "x": 1966.2499999999986,
-              "y": 1614.5000000000005
+              "x": 1713.0939451054405,
+              "y": 1313.2027457958045
             },
             "targetPoint": {
-              "x": 1686,
-              "y": 1487
+              "x": 1713.243491774985,
+              "y": 1384.0223546302789
             },
             "label": {
-              "x": 1907.8749999999995,
-              "y": 1487
+              "x": 1713.0939451054405,
+              "y": 1348.6873235478138
             },
             "points": [
               {
-                "x": 1966.2499999999986,
-                "y": 1614.5000000000005
+                "x": 1713.0939451054405,
+                "y": 1313.2027457958045
               },
               {
-                "x": 1984.2499999999986,
-                "y": 1614.5000000000005
+                "x": 1713.0939451054405,
+                "y": 1366.0223546302789
               },
               {
-                "x": 1984.2499999999986,
-                "y": 1487
+                "x": 1713.243491774985,
+                "y": 1366.0223546302789
               },
               {
-                "x": 1686,
-                "y": 1487
+                "x": 1713.243491774985,
+                "y": 1384.0223546302789
               }
             ],
             "corner": 8
@@ -1889,83 +1955,83 @@
             "corner": 8
           },
           "succession:sdff::configurerSysteme/sdff::configurerSysteme::lancerRechercheDispositif->sdff::configurerSysteme/sdff::configurerSysteme::etablirCommunicationAvecDispositif": {
-            "sourceHandle": "bottom:0.333",
+            "sourceHandle": "bottom",
             "targetHandle": "top",
-            "path": "M 1558.603,1516 L 1558.603,1552 Q 1558.603,1560 1550.603,1560 L 1435.75,1560 Q 1427.75,1560 1427.75,1568 L 1427.75,1578",
+            "path": "M 1713.243,1442.022 L 1713.243,1472.606 Q 1713.243,1472.981 1712.868,1472.981 L 1712.868,1472.981 Q 1712.493,1472.981 1712.493,1473.356 L 1712.493,1490.981",
             "lineStyle": "orthogonal",
             "sourcePoint": {
-              "x": 1558.603,
-              "y": 1516
+              "x": 1713.243491774985,
+              "y": 1442.0223546302789
             },
             "targetPoint": {
-              "x": 1427.7499999999998,
-              "y": 1578.0000000000002
+              "x": 1712.4934917749845,
+              "y": 1490.9814661453001
             },
             "label": {
-              "x": 1506.1765,
-              "y": 1560.0000000000002
+              "x": 1713.243491774985,
+              "y": 1466.8769103877898
             },
             "points": [
               {
-                "x": 1558.603,
-                "y": 1516
+                "x": 1713.243491774985,
+                "y": 1442.0223546302789
               },
               {
-                "x": 1558.603,
-                "y": 1560.0000000000002
+                "x": 1713.243491774985,
+                "y": 1472.9814661453001
               },
               {
-                "x": 1427.7499999999998,
-                "y": 1560.0000000000002
+                "x": 1712.4934917749845,
+                "y": 1472.9814661453001
               },
               {
-                "x": 1427.7499999999998,
-                "y": 1578.0000000000002
+                "x": 1712.4934917749845,
+                "y": 1490.9814661453001
               }
             ],
             "corner": 8
           },
           "succession:sdff::configurerSysteme/sdff::configurerSysteme::etablirCommunicationAvecDispositif->sdff::configurerSysteme/sdff::configurerSysteme::decide0": {
-            "sourceHandle": "right",
-            "targetHandle": "right",
-            "path": "M 1553.75,1607 L 1563.75,1607 Q 1571.75,1607 1571.75,1615 L 1571.75,1711.712 Q 1571.75,1719.712 1563.75,1719.712 L 1449.583,1719.712",
+            "sourceHandle": "bottom",
+            "targetHandle": "top",
+            "path": "M 1712.493,1548.981 L 1712.493,1576.01 Q 1712.493,1576.296 1712.207,1576.296 L 1712.207,1576.296 Q 1711.921,1576.296 1711.921,1576.582 L 1711.921,1594.296",
             "lineStyle": "orthogonal",
             "sourcePoint": {
-              "x": 1553.7499999999998,
-              "y": 1607.0000000000002
+              "x": 1712.4934917749845,
+              "y": 1548.9814661453001
             },
             "targetPoint": {
-              "x": 1449.582911695997,
-              "y": 1719.7124401291019
+              "x": 1711.9211968909697,
+              "y": 1594.296198739749
             },
             "label": {
-              "x": 1571.7499999999998,
-              "y": 1715.4397642165525
+              "x": 1712.4934917749845,
+              "y": 1571.924979884532
             },
             "points": [
               {
-                "x": 1553.7499999999998,
-                "y": 1607.0000000000002
+                "x": 1712.4934917749845,
+                "y": 1548.9814661453001
               },
               {
-                "x": 1571.7499999999998,
-                "y": 1607.0000000000002
+                "x": 1712.4934917749845,
+                "y": 1576.296198739749
               },
               {
-                "x": 1571.7499999999998,
-                "y": 1719.7124401291019
+                "x": 1711.9211968909697,
+                "y": 1576.296198739749
               },
               {
-                "x": 1449.582911695997,
-                "y": 1719.7124401291019
+                "x": 1711.9211968909697,
+                "y": 1594.296198739749
               }
             ],
             "corner": 8
           },
           "succession:sdff::configurerSysteme/sdff::configurerSysteme::decide0->sdff::configurerSysteme/sdff::configurerSysteme::configurerCommunicationRadio:[communicationEtablie]": {
             "caption": {
-              "x": 1325.083,
-              "y": 1756.71,
+              "x": 1633.421,
+              "y": 1655.3,
               "width": 157,
               "height": 18,
               "lines": [
@@ -1973,12 +2039,12 @@
               ],
               "text": "[communicationEtablie]",
               "source": {
-                "x": 1403.582911695997,
-                "y": 1743.7124401291019
+                "x": 1711.9211968909697,
+                "y": 1642.296198739749
               },
               "target": {
-                "x": 1407.7499999999998,
-                "y": 1814.2500000000002
+                "x": 1711.006365719216,
+                "y": 1726.9489250202257
               },
               "lineStyle": "orthogonal",
               "conflicts": 0,
@@ -1986,36 +2052,36 @@
             },
             "sourceHandle": "bottom",
             "targetHandle": "top",
-            "path": "M 1403.583,1743.712 L 1403.583,1794.166 Q 1403.583,1796.25 1405.666,1796.25 L 1405.666,1796.25 Q 1407.75,1796.25 1407.75,1798.334 L 1407.75,1814.25",
+            "path": "M 1711.921,1642.296 L 1711.921,1708.492 Q 1711.921,1708.949 1711.464,1708.949 L 1711.464,1708.949 Q 1711.006,1708.949 1711.006,1709.406 L 1711.006,1726.949",
             "lineStyle": "orthogonal",
             "sourcePoint": {
-              "x": 1403.582911695997,
-              "y": 1743.7124401291019
+              "x": 1711.9211968909697,
+              "y": 1642.296198739749
             },
             "targetPoint": {
-              "x": 1407.7499999999998,
-              "y": 1814.2500000000002
+              "x": 1711.006365719216,
+              "y": 1726.9489250202257
             },
             "label": {
-              "x": 1403.582911695997,
-              "y": 1781.0647642165525
+              "x": 1711.9211968909697,
+              "y": 1685.079977465864
             },
             "points": [
               {
-                "x": 1403.582911695997,
-                "y": 1743.7124401291019
+                "x": 1711.9211968909697,
+                "y": 1642.296198739749
               },
               {
-                "x": 1403.582911695997,
-                "y": 1796.2500000000002
+                "x": 1711.9211968909697,
+                "y": 1708.9489250202257
               },
               {
-                "x": 1407.7499999999998,
-                "y": 1796.2500000000002
+                "x": 1711.006365719216,
+                "y": 1708.9489250202257
               },
               {
-                "x": 1407.7499999999998,
-                "y": 1814.2500000000002
+                "x": 1711.006365719216,
+                "y": 1726.9489250202257
               }
             ],
             "corner": 8
@@ -2060,73 +2126,73 @@
           "succession:sdff::configurerSysteme/sdff::configurerSysteme::configurerParametresDetection->sdff::configurerSysteme/sdff::configurerSysteme::configurerLocalisation": {
             "sourceHandle": "bottom",
             "targetHandle": "top",
-            "path": "M 1752,2056 L 1752,2120.625 Q 1752,2122.5 1753.875,2122.5 L 1753.875,2122.5 Q 1755.75,2122.5 1755.75,2124.375 L 1755.75,2140.5",
+            "path": "M 1710.647,1900.926 L 1710.647,1926.799 Q 1710.647,1927.221 1710.224,1927.221 L 1710.224,1927.221 Q 1709.802,1927.221 1709.802,1927.644 L 1709.802,1945.221",
             "lineStyle": "orthogonal",
             "sourcePoint": {
-              "x": 1752,
-              "y": 2056
+              "x": 1710.646859220107,
+              "y": 1900.9257220754007
             },
             "targetPoint": {
-              "x": 1755.7499999999995,
-              "y": 2140.5000000000005
+              "x": 1709.8020658001185,
+              "y": 1945.221279650505
             },
             "label": {
-              "x": 1752,
-              "y": 2100.125
+              "x": 1710.646859220107,
+              "y": 1923.4958975729471
             },
             "points": [
               {
-                "x": 1752,
-                "y": 2056
+                "x": 1710.646859220107,
+                "y": 1900.9257220754007
               },
               {
-                "x": 1752,
-                "y": 2122.5000000000005
+                "x": 1710.646859220107,
+                "y": 1927.221279650505
               },
               {
-                "x": 1755.7499999999995,
-                "y": 2122.5000000000005
+                "x": 1709.8020658001185,
+                "y": 1927.221279650505
               },
               {
-                "x": 1755.7499999999995,
-                "y": 2140.5000000000005
+                "x": 1709.8020658001185,
+                "y": 1945.221279650505
               }
             ],
             "corner": 8
           },
           "succession:sdff::configurerSysteme/sdff::configurerSysteme::configurerLocalisation->sdff::configurerSysteme/sdff::configurerSysteme::verifierConfiguration": {
-            "sourceHandle": "right",
-            "targetHandle": "right",
-            "path": "M 1841.25,2169.5 L 1862.5,2169.5 Q 1870.5,2169.5 1870.5,2177.5 L 1870.5,2277.75 Q 1870.5,2285.75 1862.5,2285.75 L 1852.5,2285.75",
+            "sourceHandle": "bottom",
+            "targetHandle": "top",
+            "path": "M 1709.802,2003.221 L 1709.802,2038.359 Q 1709.802,2038.876 1709.285,2038.876 L 1709.285,2038.876 Q 1708.768,2038.876 1708.768,2039.394 L 1708.768,2056.876",
             "lineStyle": "orthogonal",
             "sourcePoint": {
-              "x": 1841.2499999999995,
-              "y": 2169.5000000000005
+              "x": 1709.8020658001185,
+              "y": 2003.221279650505
             },
             "targetPoint": {
-              "x": 1852.4999999999998,
-              "y": 2285.75
+              "x": 1708.7676855401542,
+              "y": 2056.8764862305165
             },
             "label": {
-              "x": 1870.4999999999998,
-              "y": 2222
+              "x": 1709.8020658001185,
+              "y": 2030.566073070493
             },
             "points": [
               {
-                "x": 1841.2499999999995,
-                "y": 2169.5000000000005
+                "x": 1709.8020658001185,
+                "y": 2003.221279650505
               },
               {
-                "x": 1870.4999999999998,
-                "y": 2169.5000000000005
+                "x": 1709.8020658001185,
+                "y": 2038.8764862305165
               },
               {
-                "x": 1870.4999999999998,
-                "y": 2285.75
+                "x": 1708.7676855401542,
+                "y": 2038.8764862305165
               },
               {
-                "x": 1852.4999999999998,
-                "y": 2285.75
+                "x": 1708.7676855401542,
+                "y": 2056.8764862305165
               }
             ],
             "corner": 8
@@ -2134,73 +2200,73 @@
           "succession:sdff::configurerSysteme/sdff::configurerSysteme::verifierConfiguration->sdff::configurerSysteme/sdff::configurerSysteme::enregistrerConfiguration": {
             "sourceHandle": "bottom",
             "targetHandle": "top",
-            "path": "M 1768.5,2314.75 L 1768.5,2330.25 Q 1768.5,2336.25 1774.5,2336.25 L 1774.5,2336.25 Q 1780.5,2336.25 1780.5,2342.25 L 1780.5,2354.25",
+            "path": "M 1708.768,2114.876 L 1708.768,2147.93 Q 1708.768,2148.079 1708.917,2148.079 L 1708.917,2148.079 Q 1709.066,2148.079 1709.066,2148.228 L 1709.066,2166.079",
             "lineStyle": "orthogonal",
             "sourcePoint": {
-              "x": 1768.4999999999998,
-              "y": 2314.75
+              "x": 1708.7676855401542,
+              "y": 2114.8764862305165
             },
             "targetPoint": {
-              "x": 1780.4999999999998,
-              "y": 2354.2500000000005
+              "x": 1709.0657417778214,
+              "y": 2166.0788507220486
             },
             "label": {
-              "x": 1772.7499999999995,
-              "y": 2336.2500000000005
+              "x": 1708.7676855401542,
+              "y": 2140.6266965951163
             },
             "points": [
               {
-                "x": 1768.4999999999998,
-                "y": 2314.75
+                "x": 1708.7676855401542,
+                "y": 2114.8764862305165
               },
               {
-                "x": 1768.4999999999998,
-                "y": 2336.2500000000005
+                "x": 1708.7676855401542,
+                "y": 2148.0788507220486
               },
               {
-                "x": 1780.4999999999998,
-                "y": 2336.2500000000005
+                "x": 1709.0657417778214,
+                "y": 2148.0788507220486
               },
               {
-                "x": 1780.4999999999998,
-                "y": 2354.2500000000005
+                "x": 1709.0657417778214,
+                "y": 2166.0788507220486
               }
             ],
             "corner": 8
           },
           "succession:sdff::configurerSysteme/sdff::configurerSysteme::enregistrerConfiguration->sdff::configurerSysteme/sdff::configurerSysteme::confirmerConfiguration": {
-            "sourceHandle": "right",
-            "targetHandle": "right",
-            "path": "M 1872.5,2383.25 L 1885.5,2383.25 Q 1893.5,2383.25 1893.5,2391.25 L 1893.5,2473.719 Q 1893.5,2481.719 1885.5,2481.719 L 1875.5,2481.719",
+            "sourceHandle": "bottom",
+            "targetHandle": "top",
+            "path": "M 1709.066,2224.079 L 1709.066,2248.586 Q 1709.066,2248.709 1708.943,2248.709 L 1708.943,2248.709 Q 1708.821,2248.709 1708.821,2248.831 L 1708.821,2266.709",
             "lineStyle": "orthogonal",
             "sourcePoint": {
-              "x": 1872.4999999999998,
-              "y": 2383.2500000000005
+              "x": 1709.0657417778214,
+              "y": 2224.0788507220486
             },
             "targetPoint": {
-              "x": 1875.5,
-              "y": 2481.71875
+              "x": 1708.8208538661072,
+              "y": 2266.7085625340587
             },
             "label": {
-              "x": 1893.5,
-              "y": 2430.984375
+              "x": 1709.0657417778214,
+              "y": 2245.5161505839105
             },
             "points": [
               {
-                "x": 1872.4999999999998,
-                "y": 2383.2500000000005
+                "x": 1709.0657417778214,
+                "y": 2224.0788507220486
               },
               {
-                "x": 1893.5,
-                "y": 2383.2500000000005
+                "x": 1709.0657417778214,
+                "y": 2248.7085625340587
               },
               {
-                "x": 1893.5,
-                "y": 2481.71875
+                "x": 1708.8208538661072,
+                "y": 2248.7085625340587
               },
               {
-                "x": 1875.5,
-                "y": 2481.71875
+                "x": 1708.8208538661072,
+                "y": 2266.7085625340587
               }
             ],
             "corner": 8
@@ -2208,41 +2274,174 @@
           "succession:sdff::configurerSysteme/sdff::configurerSysteme::confirmerConfiguration->sdff::configurerSysteme/__final__": {
             "sourceHandle": "bottom",
             "targetHandle": "top",
-            "path": "M 1790,2510.719 L 1790,2652 Q 1790,2660 1782,2660 L 1566,2660 Q 1558,2660 1558,2668 L 1558,2678",
+            "path": "M 1708.821,2324.709 L 1708.821,2346.983 Q 1708.821,2347.038 1708.765,2347.038 L 1708.765,2347.038 Q 1708.709,2347.038 1708.709,2347.094 L 1708.709,2365.038",
             "lineStyle": "orthogonal",
             "sourcePoint": {
-              "x": 1790,
-              "y": 2510.71875
+              "x": 1708.8208538661072,
+              "y": 2324.7085625340587
             },
             "targetPoint": {
-              "x": 1558,
-              "y": 2678
+              "x": 1708.709170238955,
+              "y": 2365.038487066793
             },
             "label": {
-              "x": 1739.640625,
-              "y": 2660
+              "x": 1708.8208538661072,
+              "y": 2344.929366614002
             },
             "points": [
               {
-                "x": 1790,
-                "y": 2510.71875
+                "x": 1708.8208538661072,
+                "y": 2324.7085625340587
               },
               {
-                "x": 1790,
-                "y": 2660
+                "x": 1708.8208538661072,
+                "y": 2347.038487066793
               },
               {
-                "x": 1558,
-                "y": 2660
+                "x": 1708.709170238955,
+                "y": 2347.038487066793
               },
               {
-                "x": 1558,
-                "y": 2678
+                "x": 1708.709170238955,
+                "y": 2365.038487066793
+              }
+            ],
+            "corner": 8
+          },
+          "succession:sdff::configurerSysteme/__initial__->sdff::configurerSysteme/sdff::configurerSysteme::merge0": {
+            "sourceHandle": "bottom",
+            "targetHandle": "top",
+            "path": "M 1713.297,1210.073 L 1713.297,1247.101 Q 1713.297,1247.203 1713.196,1247.203 L 1713.196,1247.203 Q 1713.094,1247.203 1713.094,1247.304 L 1713.094,1265.203",
+            "lineStyle": "orthogonal",
+            "sourcePoint": {
+              "x": 1713.2973967099938,
+              "y": 1210.0732381049017
+            },
+            "targetPoint": {
+              "x": 1713.0939451054405,
+              "y": 1265.2027457958045
+            },
+            "label": {
+              "x": 1713.2973967099938,
+              "y": 1237.7397177526298
+            },
+            "points": [
+              {
+                "x": 1713.2973967099938,
+                "y": 1210.0732381049017
+              },
+              {
+                "x": 1713.2973967099938,
+                "y": 1247.2027457958045
+              },
+              {
+                "x": 1713.0939451054405,
+                "y": 1247.2027457958045
+              },
+              {
+                "x": 1713.0939451054405,
+                "y": 1265.2027457958045
+              }
+            ],
+            "corner": 8
+          },
+          "succession:sdff::configurerSysteme/sdff::configurerSysteme::decide0->sdff::configurerSysteme/sdff::configurerSysteme::merge0:[not communicationEtablie]": {
+            "caption": {
+              "x": 1768.921,
+              "y": 1609.296,
+              "width": 182,
+              "height": 18,
+              "lines": [
+                "[not communicationEtablie]"
+              ],
+              "text": "[not communicationEtablie]",
+              "source": {
+                "x": 1757.9211968909697,
+                "y": 1618.296198739749
+              },
+              "target": {
+                "x": 1754.0939451054405,
+                "y": 1289.2027457958045
+              },
+              "lineStyle": "orthogonal",
+              "conflicts": 0,
+              "crossings": 0
+            },
+            "sourceHandle": "right",
+            "targetHandle": "right",
+            "path": "M 1757.921,1618.296 L 1944,1618.296 Q 1952,1618.296 1952,1610.296 L 1952,1297.203 Q 1952,1289.203 1944,1289.203 L 1754.094,1289.203",
+            "lineStyle": "orthogonal",
+            "sourcePoint": {
+              "x": 1757.9211968909697,
+              "y": 1618.296198739749
+            },
+            "targetPoint": {
+              "x": 1754.0939451054405,
+              "y": 1289.2027457958045
+            },
+            "label": {
+              "x": 1952,
+              "y": 1451.8358463750121
+            },
+            "points": [
+              {
+                "x": 1757.9211968909697,
+                "y": 1618.296198739749
+              },
+              {
+                "x": 1952,
+                "y": 1618.296198739749
+              },
+              {
+                "x": 1952,
+                "y": 1289.2027457958045
+              },
+              {
+                "x": 1754.0939451054405,
+                "y": 1289.2027457958045
+              }
+            ],
+            "corner": 8
+          },
+          "succession:sdff::configurerSysteme/sdff::configurerSysteme::configurerCommunicationRadio->sdff::configurerSysteme/sdff::configurerSysteme::configurerParametresDetection": {
+            "sourceHandle": "bottom",
+            "targetHandle": "top",
+            "path": "M 1711.006,1784.949 L 1711.006,1824.746 Q 1711.006,1824.926 1710.827,1824.926 L 1710.827,1824.926 Q 1710.647,1824.926 1710.647,1825.105 L 1710.647,1842.926",
+            "lineStyle": "orthogonal",
+            "sourcePoint": {
+              "x": 1711.006365719216,
+              "y": 1784.9489250202257
+            },
+            "targetPoint": {
+              "x": 1710.646859220107,
+              "y": 1842.9257220754007
+            },
+            "label": {
+              "x": 1711.006365719216,
+              "y": 1814.1170767973676
+            },
+            "points": [
+              {
+                "x": 1711.006365719216,
+                "y": 1784.9489250202257
+              },
+              {
+                "x": 1711.006365719216,
+                "y": 1824.9257220754007
+              },
+              {
+                "x": 1710.646859220107,
+                "y": 1824.9257220754007
+              },
+              {
+                "x": 1710.646859220107,
+                "y": 1842.9257220754007
               }
             ],
             "corner": 8
           }
-        }
+        },
+        "lineStyle": "orthogonal"
       }
     }
   }

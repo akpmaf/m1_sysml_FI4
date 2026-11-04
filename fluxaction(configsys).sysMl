@@ -2,7 +2,6 @@ package sdff {
     private import ScalarValues::Boolean;
 
     action configurerSysteme {
-
         attribute communicationEtablie : Boolean;
 
         action lancerRechercheDispositif;
@@ -14,21 +13,17 @@ package sdff {
         action enregistrerConfiguration;
         action confirmerConfiguration;
 
-        decide decide0;
-
+        // 1. On gère la boucle avec un merge explicite
         first start;
+        then merge merge0;
         then lancerRechercheDispositif;
         then etablirCommunicationAvecDispositif;
         then decide decide0;
+            if not communicationEtablie then merge0;
+            if communicationEtablie then configurerCommunicationRadio;
 
-        if communicationEtablie
-            then configurerCommunicationRadio;
-
-        if not communicationEtablie
-            then lancerRechercheDispositif;
-
-       // succession merge0 then lancerRechercheDispositif;
-
+        // 2. On CASSE la chaîne ici avec "first" pour éviter les flèches fantômes
+        first configurerCommunicationRadio;
         then configurerParametresDetection;
         then configurerLocalisation;
         then verifierConfiguration;
