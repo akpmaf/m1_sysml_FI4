@@ -18,7 +18,7 @@ package sdff {
         use case notifierAlerteFeu {
             ref actor operateurQG;
         }
-        use case sauvegarderInformations {
+        use case exporterInformations {
             ref actor operateurQG;
         }
         use case surveillerEtatSysteme {
