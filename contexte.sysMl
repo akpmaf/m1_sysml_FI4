@@ -52,7 +52,7 @@ package SDFF {
         flow detecte from incendie to sdff;
         flow detecte from fumee to sdff;
         flow influence from vent to sdff;
-        flow fournit from conditions_meteo to sdff;
+        flow influence from conditions_meteo to sdff;
 
         // INTERACTION ENERGETIQUE
         flow energie from soleil to sdff;
