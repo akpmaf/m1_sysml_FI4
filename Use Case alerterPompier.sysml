@@ -1,4 +1,4 @@
-package fdf {
+package sdff {
     private import ScalarValues::Boolean;
 
     action alerterPompier {

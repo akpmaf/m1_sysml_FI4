@@ -5,7 +5,7 @@ package sdff {
         part def OperateurQG;
         part def Technicien;
 
-        /* contexte */
+        /* contexte *
         part def SystemeDetectionFeu;
     }
 
