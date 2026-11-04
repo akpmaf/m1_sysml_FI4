@@ -17,6 +17,6 @@ package sdff {
             message from infrastructureDistante to passerelle;
             message accuse of AccuseReception from passerelle to moduleRadio;
             message from moduleRadio to dispositif;
-            message from dispositif to detecteur;
-        }
+            message from dispositif to detecteur;        }
+    }
 }
