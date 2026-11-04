@@ -1,0 +1,551 @@
+{
+  "version": 9,
+  "structuredDefaults": "inherited",
+  "anchors": {
+    "sdff": {
+      "afv": {
+        "layout": {
+          "sdff::notifierAlerteFeu": {
+            "x": 22,
+            "y": 22,
+            "parentKey": null,
+            "w": 1524,
+            "h": 1396
+          },
+          "sdff::notifierAlerteFeu/__initial__": {
+            "x": 411,
+            "y": 672,
+            "parentKey": "sdff::notifierAlerteFeu",
+            "w": 12,
+            "h": 12
+          },
+          "sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::recevoirDonneesCapteurs": {
+            "x": 328.5,
+            "y": 766,
+            "parentKey": "sdff::notifierAlerteFeu",
+            "w": 177,
+            "h": 58
+          },
+          "sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::analyserDonnees": {
+            "x": 333,
+            "y": 906,
+            "parentKey": "sdff::notifierAlerteFeu",
+            "w": 168,
+            "h": 58
+          },
+          "sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::poursuivreSurveillance": {
+            "x": 94,
+            "y": 1223.9388014360386,
+            "parentKey": "sdff::notifierAlerteFeu",
+            "w": 171,
+            "h": 58,
+            "placedByHand": true
+          },
+          "sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::genererAlerte": {
+            "x": 873,
+            "y": 1215.2289227087745,
+            "parentKey": "sdff::notifierAlerteFeu",
+            "w": 168,
+            "h": 58,
+            "placedByHand": true
+          },
+          "sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::transmettreNotification": {
+            "x": 1106.5692844372693,
+            "y": 1226.461896248462,
+            "parentKey": "sdff::notifierAlerteFeu",
+            "w": 177,
+            "h": 58,
+            "placedByHand": true
+          },
+          "sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::notifierOperateurQG": {
+            "x": 650.9228922708774,
+            "y": 1236.8048301986005,
+            "parentKey": "sdff::notifierAlerteFeu",
+            "w": 168,
+            "h": 58,
+            "placedByHand": true
+          },
+          "sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::consulterAlerte": {
+            "x": 1323.9076207503076,
+            "y": 1226.4618962484617,
+            "parentKey": "sdff::notifierAlerteFeu",
+            "w": 168,
+            "h": 58,
+            "placedByHand": true
+          },
+          "sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::decideFeu": {
+            "x": 539,
+            "y": 1046,
+            "parentKey": "sdff::notifierAlerteFeu",
+            "w": 112,
+            "h": 48
+          },
+          "sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::mergeSurveillance": {
+            "x": 323,
+            "y": 1176,
+            "parentKey": "sdff::notifierAlerteFeu",
+            "w": 192,
+            "h": 48
+          },
+          "sdff::notifierAlerteFeu/__final__": {
+            "x": 588.6915690835098,
+            "y": 1301.532552668078,
+            "parentKey": "sdff::notifierAlerteFeu",
+            "w": 16,
+            "h": 16,
+            "placedByHand": true
+          },
+          "sdff::notifierAlerteFeu::feuDetecte": {
+            "x": 62,
+            "y": 1316,
+            "parentKey": "sdff::notifierAlerteFeu",
+            "w": 168,
+            "h": 58
+          },
+          "sdff::notifierAlerteFeu::alerteGeneree": {
+            "x": 254,
+            "y": 1316,
+            "parentKey": "sdff::notifierAlerteFeu",
+            "w": 177,
+            "h": 58
+          }
+        },
+        "ports": {},
+        "edgeRoutes": {"succession:sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::decideFeu->sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::notifierOperateurQG":[{"x":624,"y":1245}],"succession:sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::decideFeu->sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::transmettreNotification":[{"x":861,"y":1181},{"x":919,"y":1194}]},
+        "edgeAnchors": {},
+        "edgeGeometry": {
+          "succession:sdff::notifierAlerteFeu/__initial__->sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::recevoirDonneesCapteurs": {
+            "sourceHandle": "bottom",
+            "targetHandle": "top",
+            "path": "M 439,706 L 439,788",
+            "lineStyle": "orthogonal",
+            "sourcePoint": {
+              "x": 439,
+              "y": 706
+            },
+            "targetPoint": {
+              "x": 439,
+              "y": 788
+            },
+            "label": {
+              "x": 439,
+              "y": 747
+            },
+            "points": [
+              {
+                "x": 439,
+                "y": 706
+              },
+              {
+                "x": 439,
+                "y": 788
+              }
+            ],
+            "corner": 8
+          },
+          "succession:sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::recevoirDonneesCapteurs->sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::analyserDonnees": {
+            "sourceHandle": "bottom",
+            "targetHandle": "top",
+            "path": "M 439,846 L 439,928",
+            "lineStyle": "orthogonal",
+            "sourcePoint": {
+              "x": 439,
+              "y": 846
+            },
+            "targetPoint": {
+              "x": 439,
+              "y": 928
+            },
+            "label": {
+              "x": 439,
+              "y": 887
+            },
+            "points": [
+              {
+                "x": 439,
+                "y": 846
+              },
+              {
+                "x": 439,
+                "y": 928
+              }
+            ],
+            "corner": 8
+          },
+          "succession:sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::analyserDonnees->sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::decideFeu": {
+            "sourceHandle": "bottom",
+            "targetHandle": "top",
+            "path": "M 439,986 L 439,1042 Q 439,1050 447,1050 L 609,1050 Q 617,1050 617,1058 L 617,1068",
+            "lineStyle": "orthogonal",
+            "sourcePoint": {
+              "x": 439,
+              "y": 986
+            },
+            "targetPoint": {
+              "x": 617,
+              "y": 1068
+            },
+            "label": {
+              "x": 505,
+              "y": 1050
+            },
+            "points": [
+              {
+                "x": 439,
+                "y": 986
+              },
+              {
+                "x": 439,
+                "y": 1050
+              },
+              {
+                "x": 617,
+                "y": 1050
+              },
+              {
+                "x": 617,
+                "y": 1068
+              }
+            ],
+            "corner": 8
+          },
+          "succession:sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::decideFeu->sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::poursuivreSurveillance:[not feuDetecte]": {
+            "caption": {
+              "x": 438.2,
+              "y": 1083,
+              "width": 120,
+              "height": 18,
+              "lines": [
+                "[not feuDetecte]"
+              ],
+              "text": "[not feuDetecte]",
+              "source": {
+                "x": 561,
+                "y": 1092
+              },
+              "target": {
+                "x": 201.5,
+                "y": 1245.9388014360386
+              },
+              "lineStyle": "orthogonal",
+              "conflicts": 0,
+              "crossings": 0
+            },
+            "sourceHandle": "left",
+            "targetHandle": "top",
+            "path": "M 561,1092 L 209.5,1092 Q 201.5,1092 201.5,1100 L 201.5,1245.939",
+            "lineStyle": "orthogonal",
+            "sourcePoint": {
+              "x": 561,
+              "y": 1092
+            },
+            "targetPoint": {
+              "x": 201.5,
+              "y": 1245.9388014360386
+            },
+            "label": {
+              "x": 304.2805992819807,
+              "y": 1092
+            },
+            "points": [
+              {
+                "x": 561,
+                "y": 1092
+              },
+              {
+                "x": 201.5,
+                "y": 1092
+              },
+              {
+                "x": 201.5,
+                "y": 1245.9388014360386
+              }
+            ],
+            "corner": 8
+          },
+          "succession:sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::decideFeu->sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::mergeSurveillance": {
+            "sourceHandle": "bottom:0.125",
+            "targetHandle": "top",
+            "path": "M 575,1098 L 575,1108 Q 575,1116 567,1116 L 449,1116 Q 441,1116 441,1124 L 441,1198",
+            "lineStyle": "orthogonal",
+            "sourcePoint": {
+              "x": 575,
+              "y": 1098
+            },
+            "targetPoint": {
+              "x": 441,
+              "y": 1198
+            },
+            "label": {
+              "x": 476,
+              "y": 1116
+            },
+            "points": [
+              {
+                "x": 575,
+                "y": 1098
+              },
+              {
+                "x": 575,
+                "y": 1116
+              },
+              {
+                "x": 441,
+                "y": 1116
+              },
+              {
+                "x": 441,
+                "y": 1198
+              }
+            ],
+            "corner": 8
+          },
+          "succession:sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::decideFeu->sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::genererAlerte:[feuDetecte]": {
+            "caption": {
+              "x": 684.5165132452548,
+              "y": 1113,
+              "width": 95,
+              "height": 18,
+              "lines": [
+                "[feuDetecte]"
+              ],
+              "text": "[feuDetecte]",
+              "source": {
+                "x": 645,
+                "y": 1104
+              },
+              "target": {
+                "x": 979,
+                "y": 1237.2289227087745
+              },
+              "lineStyle": "orthogonal",
+              "conflicts": 0,
+              "crossings": 0
+            },
+            "sourceHandle": "bottom:0.750",
+            "targetHandle": "top",
+            "path": "M 645,1104 L 645,1114 Q 645,1122 653,1122 L 971,1122 Q 979,1122 979,1130 L 979,1237.229",
+            "lineStyle": "orthogonal",
+            "sourcePoint": {
+              "x": 645,
+              "y": 1104
+            },
+            "targetPoint": {
+              "x": 979,
+              "y": 1237.2289227087745
+            },
+            "label": {
+              "x": 860.6144613543872,
+              "y": 1122
+            },
+            "points": [
+              {
+                "x": 645,
+                "y": 1104
+              },
+              {
+                "x": 645,
+                "y": 1122
+              },
+              {
+                "x": 979,
+                "y": 1122
+              },
+              {
+                "x": 979,
+                "y": 1237.2289227087745
+              }
+            ],
+            "corner": 8
+          },
+          "succession:sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::decideFeu->sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::transmettreNotification": {
+            "sourceHandle": "right",
+            "targetHandle": "left",
+            "path": "M 673,1092 L 853,1092 Q 861,1092 861,1100 L 861,1186 Q 861,1194 869,1194 L 1120.569,1194 Q 1128.569,1194 1128.569,1202 L 1128.569,1277.462",
+            "lineStyle": "orthogonal",
+            "sourcePoint": {
+              "x": 673,
+              "y": 1092
+            },
+            "targetPoint": {
+              "x": 1128.5692844372693,
+              "y": 1277.461896248462
+            },
+            "label": {
+              "x": 891.5155903428656,
+              "y": 1194
+            },
+            "points": [
+              {
+                "x": 673,
+                "y": 1092
+              },
+              {
+                "x": 861,
+                "y": 1092
+              },
+              {
+                "x": 861,
+                "y": 1194
+              },
+              {
+                "x": 1128.5692844372693,
+                "y": 1194
+              },
+              {
+                "x": 1128.5692844372693,
+                "y": 1277.461896248462
+              }
+            ],
+            "corner": 8
+          },
+          "succession:sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::decideFeu->sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::notifierOperateurQG": {
+            "sourceHandle": "bottom:0.375",
+            "targetHandle": "left",
+            "path": "M 603,1110 L 603,1237 Q 603,1245 611,1245 L 664.923,1245 Q 672.923,1245 672.923,1253 L 672.923,1287.805",
+            "lineStyle": "orthogonal",
+            "sourcePoint": {
+              "x": 603,
+              "y": 1110
+            },
+            "targetPoint": {
+              "x": 672.9228922708774,
+              "y": 1287.8048301986005
+            },
+            "label": {
+              "x": 603,
+              "y": 1233.863861234739
+            },
+            "points": [
+              {
+                "x": 603,
+                "y": 1110
+              },
+              {
+                "x": 603,
+                "y": 1245
+              },
+              {
+                "x": 672.9228922708774,
+                "y": 1245
+              },
+              {
+                "x": 672.9228922708774,
+                "y": 1287.8048301986005
+              }
+            ],
+            "corner": 8
+          },
+          "succession:sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::decideFeu->sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::consulterAlerte": {
+            "sourceHandle": "right",
+            "targetHandle": "top",
+            "path": "M 673,1092 L 1421.908,1092 Q 1429.908,1092 1429.908,1100 L 1429.908,1248.462",
+            "lineStyle": "orthogonal",
+            "sourcePoint": {
+              "x": 673,
+              "y": 1092
+            },
+            "targetPoint": {
+              "x": 1429.9076207503076,
+              "y": 1248.4618962484617
+            },
+            "label": {
+              "x": 1129.6847584993848,
+              "y": 1092
+            },
+            "points": [
+              {
+                "x": 673,
+                "y": 1092
+              },
+              {
+                "x": 1429.9076207503076,
+                "y": 1092
+              },
+              {
+                "x": 1429.9076207503076,
+                "y": 1248.4618962484617
+              }
+            ],
+            "corner": 8
+          },
+          "succession:sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::decideFeu->sdff::notifierAlerteFeu/__final__": {
+            "sourceHandle": "bottom:0.250",
+            "targetHandle": "top",
+            "path": "M 589,1104 L 589,1297.533 Q 589,1305.533 597,1305.533 L 610.692,1305.533 Q 618.692,1305.533 618.692,1313.533 L 618.692,1323.533",
+            "lineStyle": "orthogonal",
+            "sourcePoint": {
+              "x": 589,
+              "y": 1104
+            },
+            "targetPoint": {
+              "x": 618.6915690835098,
+              "y": 1323.532552668078
+            },
+            "label": {
+              "x": 589,
+              "y": 1228.612060875794
+            },
+            "points": [
+              {
+                "x": 589,
+                "y": 1104
+              },
+              {
+                "x": 589,
+                "y": 1305.532552668078
+              },
+              {
+                "x": 618.6915690835098,
+                "y": 1305.532552668078
+              },
+              {
+                "x": 618.6915690835098,
+                "y": 1323.532552668078
+              }
+            ],
+            "corner": 8
+          },
+          "succession:sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::mergeSurveillance->sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::recevoirDonneesCapteurs": {
+            "sourceHandle": "left",
+            "targetHandle": "left",
+            "path": "M 345,1222 L 335,1222 Q 327,1222 327,1214 L 327,825 Q 327,817 335,817 L 350.5,817",
+            "lineStyle": "orthogonal",
+            "sourcePoint": {
+              "x": 345,
+              "y": 1222
+            },
+            "targetPoint": {
+              "x": 350.5,
+              "y": 817
+            },
+            "label": {
+              "x": 327,
+              "y": 1016.75
+            },
+            "points": [
+              {
+                "x": 345,
+                "y": 1222
+              },
+              {
+                "x": 327,
+                "y": 1222
+              },
+              {
+                "x": 327,
+                "y": 817
+              },
+              {
+                "x": 350.5,
+                "y": 817
+              }
+            ],
+            "corner": 8
+          }
+        },
+        "lineStyle": "orthogonal"
+      }
+    }
+  }
+}
