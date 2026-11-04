@@ -43,14 +43,18 @@ package SDFF {
         }
 
         requirement autonomieEnergetique specializes contraintes {
-            doc /* le système doit être pourvu d'une autonomie énergétique suffisante */
+            doc /* le système doit être pourvu d'une autonomie énergétique suffisante (24h/24)*/
         }
 
         requirement resistanceintemperies specializes contraintes {
-            doc /* le système doit résister aux intempéries */
+            doc /* le système doit résister aux intempéries (pluie-température-vent) */
         }
-
-    
+         requirement detectionPrecoce specializes contraintes {
+            doc /* le système doit résister aux intempéries (pluie-température-vent) */
+        }
+         requirement limitationFaussesAlertes specializes contraintes {
+            doc /* le système doit résister aux intempéries (pluie-température-vent) */
+        }
         
         /* exigences créées pour regrouper l'ensemble de manière hiérarchique */
         requirement  contraintes specializes specificationsSDFF {
