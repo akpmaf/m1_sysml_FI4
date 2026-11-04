@@ -1,0 +1,33 @@
+package fdf {
+    private import ScalarValues::Boolean;
+
+    action alerterPompier {
+        attribute dispositifActif : Boolean;
+        attribute departFeuDetecte : Boolean;
+        attribute aucunDepartFeu : Boolean;
+        attribute accuseReceptionRecu : Boolean;
+        attribute accuseReceptionAbsent : Boolean;
+
+        action surveillerEnvironnement;
+        action composerAlerte;
+        action envoyerAlerteRadio;
+        action relayerAlerteAuxSecours;
+        merge merge0;
+        decide decide0;
+        merge merge1;
+        decide decide1;
+
+        first start;
+        succession start if dispositifActif then merge0;
+        then surveillerEnvironnement;
+        then decide0;
+            if aucunDepartFeu then merge0;
+            if departFeuDetecte then composerAlerte;
+        succession composerAlerte then merge1;
+        then envoyerAlerteRadio;
+        then decide1;
+            if accuseReceptionAbsent then merge1;
+            if accuseReceptionRecu then relayerAlerteAuxSecours;
+        succession relayerAlerteAuxSecours then done;
+    }
+}
