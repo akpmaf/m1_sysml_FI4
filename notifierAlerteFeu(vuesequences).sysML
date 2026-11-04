@@ -1,38 +1,38 @@
-
 package sdff {
 
-    private import sdff.parts::parts::*;
+    private import sdff::parts::*;
 
     package sequences {
-        private import sdff::parts::OperateurQG;
 
         occurrence notifierAlerteFeu {
 
-            part capteur : Capteur;
-            part systeme : SystemeSurveillance;
-            part serviceNotification : 'ServiceNotification';
-            part operateurQG : 'OperateurQG';
+            part detecteur : DetecteurFeu;
+            part dispositif : DispositifDetection;
+            part moduleRadio : ModuleRadio;
+            part passerelle : Passerelle;
+            part infrastructureDistante : InfrastructureReceptionDistante;
+            part operateurQG : OperateurQG;
 
-            message transmettreDonnees
-                from capteur to systeme;
+            message notifierAlerteFeu
+                from detecteur to dispositif;
 
-            message analyserDonnees
-                from systeme to systeme;
+            message envoyer of Alerte
+                from dispositif to moduleRadio;
 
-            message genererAlerte
-                from systeme to systeme;
+            message transmettre of Alerte
+                from moduleRadio to passerelle;
 
-            message transmettreAlerte
-                from systeme to serviceNotification;
+            message relayer of Alerte
+                from passerelle to infrastructureDistante;
 
-            message notifierOperateurQG
-                from serviceNotification to operateurQG;
+            message notifier of Alerte
+                from infrastructureDistante to operateurQG;
 
             message consulterAlerte
-                from operateurQG to systeme;
+                from operateurQG to infrastructureDistante;
 
-            message afficherDetailsAlerte
-                from systeme to operateurQG;
+            message confirmerReception of AccuseReception
+                from operateurQG to infrastructureDistante;
         }
     }
 }

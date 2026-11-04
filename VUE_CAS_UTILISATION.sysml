@@ -5,7 +5,8 @@ package sdff {
         part def OperateurQG;
         part def Technicien;
 
-        /* contexte */        part def SystemeDetectionFeu;
+        /* contexte */
+        part def SystemeDetectionFeu;
     }
 
     package useCases {
@@ -35,6 +36,6 @@ package sdff {
         }
         use case maintenirSysteme {
             ref actor technicien;
-        } 
+        }
     }
 }
