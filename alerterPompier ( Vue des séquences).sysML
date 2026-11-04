@@ -5,7 +5,7 @@ package sdff {
     part def DispositifDetection;
     part def ModuleRadio;
     part def Passerelle;
-part def InfrastructureReceptionDistante;
+
     part def Alerte;
     part def AccuseReception;
     part def StatutEnvoi;
@@ -29,8 +29,6 @@ part def InfrastructureReceptionDistante;
             message from moduleRadio to dispositif;
             message from dispositif to detecteur;
         }
-        package sdff {
-    private import SDFF::*;
 
         // Scénario 2 : premier envoi sans accusé, puis renvoi
         occurrence alerterPompierS2 {
@@ -38,7 +36,7 @@ part def InfrastructureReceptionDistante;
             part dispositif : DispositifDetection;
             part moduleRadio : ModuleRadio;
             part passerelle : Passerelle;
-            part infrastructureDistante : InfrastructureReceptionDistante;
+            infrastructureDistante : InfrastructureReceptionDistante;
 
             message alerterPompier from detecteur to dispositif;
 
@@ -55,6 +53,5 @@ part def InfrastructureReceptionDistante;
 
             message from dispositif to detecteur;
         }
-    }
     }
     }
