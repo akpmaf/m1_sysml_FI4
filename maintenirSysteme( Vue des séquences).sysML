@@ -3,6 +3,23 @@ package sdff {
     part def ListeDispositifsEnPanne;
     part def Diagnostic;
     part def ResultatTest;
+    part def DetecteurFeu;
+    part def DispositifDetection;
+    part def ModuleRadio;
+    part def ModuleEnergie;
+    part def Passerelle;
+    part def InterfaceSupervision;
+    part def Alerte;
+    part def AccuseReception;
+    part def StatutEnvoi;
+    part def NiveauEnergie;
+    part def QualiteLiaison;
+    part def EtatDispositif;
+    part def EtatSysteme;
+    part def DispositifEnPanne;
+   
+   
+   
      package sequences {
 
         // Scénario 1 : test réussi
