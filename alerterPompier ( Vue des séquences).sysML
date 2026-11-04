@@ -5,6 +5,8 @@ package sdff {
     part def DispositifDetection;
     part def ModuleRadio;
     part def Passerelle;
+    part def InfrastructureReceptionDistante;
+     
 
     part def Alerte;
     part def AccuseReception;
