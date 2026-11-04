@@ -19,3 +19,4 @@ package sdff {
             message from moduleRadio to dispositif;
             message from dispositif to detecteur;
         }
+}
