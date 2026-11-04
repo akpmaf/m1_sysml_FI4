@@ -15,13 +15,13 @@ package sdff {
         actor operateurQG:OperateurQG;
         actor technicien:Technicien;
 
-        use case recevoirAlerteFeu {
+        use case notifierAlerteFeu {
             ref actor operateurQG;
         }
         use case sauvegarderInformations {
             ref actor operateurQG;
         }
-        use case surveillerZone {
+        use case surveillerEtatSysteme {
             ref actor operateurQG;
         }
         use case alerterPompier {
