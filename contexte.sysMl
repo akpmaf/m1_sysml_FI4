@@ -61,5 +61,7 @@ package SDFF {
         flow transmet from sdff to reseau;
         flow transmet from reseau to infrastructureDistante;
         flow transmet from infrastructureDistante to sdff;
+        flow localise from sdff to  Gps; 
+
     }
 }
