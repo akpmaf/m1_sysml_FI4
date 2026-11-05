@@ -1,6 +1,6 @@
-package SDFF {
+package sdff {
 
-    private import SDFF::*;
+    private import sdff::*;
 part def  Operateur;
     part def PhenomenesNaturels;
     part def DetectionFeuForet;

@@ -1,6 +1,6 @@
 package sequences {
 
-    private import SDFF::*;
+    private import sdff::*;
   part def DetectionFeuForet;
     part def ServicesSecours;
     part def AgentForestier;
