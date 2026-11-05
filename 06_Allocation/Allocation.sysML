@@ -12,7 +12,7 @@ package sdff {
         private import sdff::architecture::*;
         private import sdff::*;
         
-        // ---- alerterPompier ---- //
+        // alerterPompier  //
         allocate alerterPompier.surveillerEnvironnement to exploitation.sdff.noeud.detecteur.capteurs;
         allocate alerterPompier.surveillerEnvironnement to exploitation.sdff.noeud.detecteur.cameras;
         allocate alerterPompier.surveillerEnvironnement to exploitation.sdff.noeud.uniteTraitement;
@@ -21,7 +21,7 @@ package sdff {
         allocate alerterPompier.relayerAlerteAuxSecours to exploitation.sdff.passerelle;
         allocate alerterPompier.relayerAlerteAuxSecours to exploitation.infrastructureDistante;
 
-        // ---- configurerSysteme ----
+        //  configurerSysteme  //
         allocate configurerSysteme.lancerRechercheDispositif to exploitation.sdff.supervision;
         allocate configurerSysteme.lancerRechercheDispositif to exploitation.sdff.passerelle;
         allocate configurerSysteme.lancerRechercheDispositif to exploitation.technicien_de_maintenance;
@@ -39,7 +39,7 @@ package sdff {
         allocate configurerSysteme.enregistrerConfiguration to exploitation.sdff.noeud.uniteTraitement;
         allocate configurerSysteme.confirmerConfiguration to exploitation.sdff.supervision;
 
-        // ---- exporterInformation ----
+        // exporterInformation  //
         allocate exporterInformation.recevoirDemandeExportation to exploitation.sdff.supervision;
         allocate exporterInformation.selectionnerInformations to exploitation.sdff.supervision;
         allocate exporterInformation.selectionnerInformations to exploitation.sdff.passerelle;
@@ -51,7 +51,7 @@ package sdff {
         allocate exporterInformation.confirmerExportation to exploitation.sdff.supervision;
         allocate exporterInformation.afficherMessageErreur to exploitation.sdff.supervision;
 
-        // ---- installerSysteme ----
+        //  installerSysteme  //
         allocate installerSysteme.verifierSite to exploitation.technicien_de_maintenance;
         allocate installerSysteme.choisirAutreSite to exploitation.technicien_de_maintenance;
         allocate installerSysteme.installerCapteurs to exploitation.sdff.noeud.detecteur.capteurs;
@@ -79,7 +79,7 @@ package sdff {
         allocate installerSysteme.validerInstallation to exploitation.sdff.supervision;
         allocate installerSysteme.validerInstallation to exploitation.technicien_de_maintenance;
 
-        // ---- maintenirSysteme ----
+        //  maintenirSysteme  //
         allocate maintenirSysteme.listerDispositifsEnPanne to exploitation.sdff.passerelle;
         allocate maintenirSysteme.listerDispositifsEnPanne to exploitation.sdff.supervision;
         allocate maintenirSysteme.selectionnerDispositif to exploitation.sdff.supervision;
@@ -101,7 +101,7 @@ package sdff {
         allocate maintenirSysteme.remettreEnService to exploitation.sdff.passerelle;
         allocate maintenirSysteme.remettreEnService to exploitation.sdff.supervision;
 
-        // ---- notifierAlerteFeu ----
+        //  notifierAlerteFeu  //
         allocate notifierAlerteFeu.recevoirDonneesCapteurs to exploitation.sdff.noeud.detecteur.capteurs;
         allocate notifierAlerteFeu.recevoirDonneesCapteurs to exploitation.sdff.noeud.detecteur.cameras;
         allocate notifierAlerteFeu.recevoirDonneesCapteurs to exploitation.sdff.noeud.uniteTraitement;
@@ -114,7 +114,7 @@ package sdff {
         allocate notifierAlerteFeu.notifierOperateurQG to exploitation.infrastructureDistante;
         allocate notifierAlerteFeu.consulterAlerte to exploitation.infrastructureDistante;
 
-        // ---- surveillerEtatSysteme ----
+        //  surveillerEtatSysteme  //
         allocate surveillerEtatSysteme.collecterEtatDispositifs to exploitation.sdff.noeud.uniteTraitement;
         allocate surveillerEtatSysteme.collecterEtatDispositifs to exploitation.sdff.noeud.moduleRadio;
         allocate surveillerEtatSysteme.collecterEtatDispositifs to exploitation.sdff.noeud.moduleEnergie;
