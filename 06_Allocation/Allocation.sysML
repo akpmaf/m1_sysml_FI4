@@ -1,5 +1,6 @@
 /* SDFF – Séance 3 – matrice d'allocation fonctionnelle (action -> composant) */
 package sdff {
+
     package allocations {
         private import sdff::*;
         private import sdff::ContexteGlobal;
@@ -7,7 +8,11 @@ package sdff {
 
         part exploitation : ContexteGlobal;
 
-        // ---- alerterPompier ----
+    package allocations {
+        private import sdff::architecture::*;
+        private import sdff::*;
+        
+        // ---- alerterPompier ---- //
         allocate alerterPompier.surveillerEnvironnement to exploitation.sdff.noeud.detecteur.capteurs;
         allocate alerterPompier.surveillerEnvironnement to exploitation.sdff.noeud.detecteur.cameras;
         allocate alerterPompier.surveillerEnvironnement to exploitation.sdff.noeud.uniteTraitement;
@@ -120,4 +125,5 @@ package sdff {
         allocate surveillerEtatSysteme.signalerDispositifEnPanne to exploitation.sdff.supervision;
         allocate surveillerEtatSysteme.afficherEtatNormal to exploitation.sdff.supervision;
     }
+}
 }
