@@ -1,4 +1,4 @@
-package SDFF {
+package sdff {
 
     private import SDFF::*;
 part def  Operateur;
