@@ -1,7 +1,12 @@
 package sdff {
-    
+
     package allocations {
         private import sdff::architecture::*;
+        private import sdff::*;
+        private import SDFF::*;
+       
+       
+        
 
         // ---- alerterPompier ----
         allocate alerterPompier.surveillerEnvironnement to exploitation.sdff.noeud.detecteur.capteurs;
