@@ -1,92 +1,50 @@
 package SDFF {
-
     package parts {
 
-        /* Ports de communication */
-        port def PortDonnees;
-        port def PortRadio;
-        port def PortEnergie;
-        port def PortReseau;
-        port def PortSupervision;
+        /* Acteurs */
+        part def Acteur;
+        part def Technicien :> Acteur;
+        part def OperateurQG :> Acteur;
+        part def Pompier :> Acteur;
+        part def AgentForestier :> Acteur;
+        part def AutoritesLocales :> Acteur;
+
+        /* Environnement */
+        part def EnvironnementForestier;
+        part def Arbre;
+        part def Fumee;
+        part def SourceChaleur;
+        part def Soleil;
+        part def ConditionsMeteorologiques;
+
+        /* Système principal */
+        part def SystemeDetectionFeuxForet;
 
         /* Dispositif de détection */
-        part def DispositifDetection {
+        part def DispositifDetection;
+        part def CapteurFumee;
+        part def CapteurTemperature;
+        part def ModuleGPS;
+        part def UniteTraitement;
+        part def ModuleRadio;
+        part def ModuleEnergie;
+        part def Batterie;
+        part def PanneauSolaire;
+        part def SystemeFixation;
 
-            part capteurFumee : CapteurFumee;
-            part capteurTemperature : CapteurTemperature;
-            part moduleGPS : ModuleGPS;
-            part uniteTraitement : UniteTraitement;
-            part moduleRadio : ModuleRadio;
-            part alimentation : ModuleEnergie;
-            part fixation : SystemeFixation;
-
-            port donneesFumee : PortDonnees;
-            port donneesTemperature : PortDonnees;
-            port donneesGPS : PortDonnees;
-            port communicationRadio : PortRadio;
-            port alimentationElectrique : PortEnergie;
-        }
-
-        /* Module énergétique */
-        part def ModuleEnergie {
-
-            part batterie : Batterie;
-            part panneauSolaire : PanneauSolaire;
-        }
-
-        /* Passerelle de communication */
-        part def Passerelle {
-
-            part moduleRadio : ModuleRadio;
-            part reseauIP : ReseauIP;
-
-            port communicationRadio : PortRadio;
-            port communicationIP : PortReseau;
-        }
+        /* Communication */
+        part def Passerelle;
+        part def ReseauIP;
 
         /* Infrastructure distante */
-        part def InfrastructureDistante {
+        part def InfrastructureDistante;
+        part def ServeurAlerte;
+        part def BaseHistorique;
+        part def ServiceNotification;
 
-            part serveur : ServeurAlerte;
-            part historique : BaseHistorique;
-            part notifications : ServiceNotification;
-
-            port receptionDonnees : PortReseau;
-            port supervision : PortSupervision;
-        }
-
-        /* Interface de supervision */
-        part def InterfaceSupervision {
-
-            part tableauDeBord : TableauDeBord;
-            part export : ServiceExport;
-
-            port receptionInformations : PortSupervision;
-        }
-
-        /* Système complet */
-        part def SystemeDetectionFeuxForet {
-
-            part dispositif : DispositifDetection;
-            part passerelle : Passerelle;
-            part infrastructure : InfrastructureDistante;
-            part interfaceSupervision : InterfaceSupervision;
-
-            /* Communication entre le dispositif et la passerelle */
-            connect dispositif.communicationRadio
-                to passerelle.communicationRadio;
-
-            /* Communication entre la passerelle et l'infrastructure */
-            connect passerelle.communicationIP
-                to infrastructure.receptionDonnees;
-
-            /* Transmission des informations vers la supervision */
-            connect infrastructure.supervision
-                to interfaceSupervision.receptionInformations;
-        }
+        /* Supervision */
+        part def InterfaceSupervision;
+        part def TableauDeBord;
+        part def ServiceExport;
     }
-
-    private import SDFF::parts::*;
-
-    part systeme : SystemeDetectionFeuxForet;
 }
