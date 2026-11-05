@@ -1,5 +1,6 @@
 package sdff {
-    package allocation {
+    
+    package allocations {
         private import sdff::architecture::*;
 
         // ---- alerterPompier ----
