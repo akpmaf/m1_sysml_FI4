@@ -1,4 +1,4 @@
-/* SDFF – Séance 3 – matrice d'allocation fonctionnelle (action -> composant) */
+
 package sdff {
 
     package allocations {
