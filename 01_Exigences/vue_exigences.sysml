@@ -1,4 +1,4 @@
-package SDFF {    
+package sdff {    
     package requirements {
         /* exigences extraites des cas d'utilisation */
         requirement detectionFeu specializes fonctions {
