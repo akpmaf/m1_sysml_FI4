@@ -1,4 +1,4 @@
-package SDFF {
+package sdff {
 
     //ACTEURS 
     part def Operateur;
@@ -14,7 +14,7 @@ package SDFF {
     part def ReseauCommunication;
 
  // SYSTEME ETUDIE
-    part def DetectionFeuForet;
+    part def DetectionFeuForet :> sdff::parts::DetectionFeuForet;
 
     part def ContexteGlobal {
 

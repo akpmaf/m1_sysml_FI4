@@ -1,4 +1,4 @@
-package SDFF {
+package sdff {
 
     private import ScalarValues::Boolean;
 
