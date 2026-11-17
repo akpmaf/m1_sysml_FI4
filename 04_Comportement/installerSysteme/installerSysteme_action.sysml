@@ -38,7 +38,7 @@ package sdff {
             else choisirAutreSite;
         succession first choisirAutreSite then mergeSite;
 
-        succession installerCapteurs then installerCameras;
+        succession first installerCapteurs then installerCameras;
         then installerModuleRadio;
         then installerPasserelle;
         then connecterEquipements;
@@ -47,15 +47,15 @@ package sdff {
         then decideInstallation;
             if connexionsCorrectes then demarrerSysteme;
             else mergeCorr;
-        succession mergeCorr then corrigerProblemes;
-        succession corrigerProblemes then mergeInstallation;
-        succession demarrerSysteme then testerFonctionnement;
+        succession first mergeCorr then corrigerProblemes;
+        succession first corrigerProblemes then mergeInstallation;
+        succession first demarrerSysteme then testerFonctionnement;
 
         then decideTest;
             if testReussi then validerInstallation;
             else identifierProblemes;
-        succession identifierProblemes then mergeCorr;
+        succession first identifierProblemes then mergeCorr;
 
-        succession validerInstallation then done;
+        succession first validerInstallation then done;
     }
 }
