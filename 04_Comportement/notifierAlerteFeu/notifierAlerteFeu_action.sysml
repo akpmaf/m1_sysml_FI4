@@ -1,11 +1,9 @@
-package sdff{
-
+package sdff {
     private import ScalarValues::Boolean;
 
     action notifierAlerteFeu {
 
         attribute feuDetecte : Boolean;
-        attribute alerteGeneree : Boolean;
 
         action recevoirDonneesCapteurs;
         action analyserDonnees;
@@ -19,23 +17,17 @@ package sdff{
         merge mergeSurveillance;
 
         first start;
-
+        then mergeSurveillance;
         then recevoirDonneesCapteurs;
         then analyserDonnees;
-        then decide decideFeu;
+        then decideFeu;
+            if feuDetecte then genererAlerte;
+            else poursuivreSurveillance;
+        succession poursuivreSurveillance then mergeSurveillance;
 
-            if not feuDetecte
-                then poursuivreSurveillance;
-                then mergeSurveillance;
-
-            if feuDetecte
-                then genererAlerte;
-                then transmettreNotification;
-                then notifierOperateurQG;
-                then consulterAlerte;
-                then done;
-
-        succession mergeSurveillance
-            then recevoirDonneesCapteurs;
+        succession genererAlerte then transmettreNotification;
+        then notifierOperateurQG;
+        then consulterAlerte;
+        then done;
     }
 }

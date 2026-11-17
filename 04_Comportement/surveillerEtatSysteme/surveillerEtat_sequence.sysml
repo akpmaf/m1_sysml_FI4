@@ -1,17 +1,9 @@
 package sdff {
-    private import ScalarValues::Boolean;
-    part def NiveauEnergie;
-    part def InterfaceSupervision;
-    part def ModuleEnergie;
-    part def QualiteLiaison;
-    part def EtatDispositif;
-    part def EtatSysteme;
-    part def DispositifEnPanne;
-    part def ModuleRadio;
-    part def Passerelle;
-    part def DispositifDetection;
+    private import sdff::parts::*;
 
-    // Scénario 1 : tous les dispositifs répondent
+    package sequences {
+
+        // S1 : tous les dispositifs répondent
         occurrence surveillerEtatSystemeS1 {
             part interfaceSupervision : InterfaceSupervision;
             part passerelle : Passerelle;
@@ -29,7 +21,7 @@ package sdff {
             message etatSysteme of EtatSysteme from passerelle to interfaceSupervision;
         }
 
-        // Scénario 2 : un dispositif ne répond pas (panne)
+        // S2 : un dispositif ne répond pas (panne)
         occurrence surveillerEtatSystemeS2 {
             part interfaceSupervision : InterfaceSupervision;
             part passerelle : Passerelle;
@@ -40,3 +32,4 @@ package sdff {
             message signalerPanne of DispositifEnPanne from passerelle to interfaceSupervision;
         }
     }
+}

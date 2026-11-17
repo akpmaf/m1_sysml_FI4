@@ -1,46 +1,35 @@
-package sequences {
+package sdff {
+    private import sdff::parts::*;
 
-    private import sdff::*;
-  part def DetectionFeuForet;
-    part def ServicesSecours;
-    part def AgentForestier;
-    part def InfrastructureReceptionDistante;
-    part def ReseauCommunication;
-     part def AutoritesLocales;
-    occurrence notifierAlerteFeu {
+    package sequences {
 
-        // ELEMENTS DU SYSTEME
-        part systeme : DetectionFeuForet;
-        part reseau : ReseauCommunication;
-        part infrastructureDistante : InfrastructureReceptionDistante;
+        // S1 : feu détecté, alerte transmise jusqu'au QG et aux secours
+        occurrence notifierAlerteFeuS1 {
+            part uniteTraitement : UniteTraitement;
+            part moduleRadio : ModuleRadio;
+            part passerelle : Passerelle;
+            part reseau : ReseauCommunication;
+            part infrastructureDistante : InfrastructureReceptionDistante;
+            part operateurQG : OperateurQG;
+            part servicesSecours : ServicesSecours;
 
-        // DESTINATAIRES
-        part pompier : ServicesSecours;
-        part gardeNature : AgentForestier;
-        part autorites : AutoritesLocales;
+            message envoyerAlerte of Alerte from uniteTraitement to moduleRadio;
+            message relayerAlerte of Alerte from moduleRadio to passerelle;
+            message transmettreAlerte of Alerte from passerelle to reseau;
+            message acheminerAlerte of Alerte from reseau to infrastructureDistante;
+            message notifierQG of Alerte from infrastructureDistante to operateurQG;
+            message notifierSecours of Alerte from infrastructureDistante to servicesSecours;
+            message accuserReception of AccuseReception from infrastructureDistante to reseau;
+            message confirmerTransmission of AccuseReception from reseau to passerelle;
+            message confirmerEnvoi of StatutEnvoi from passerelle to uniteTraitement;
+        }
 
-        // TRANSMISSION DE L'ALERTE
-        message detecterIncendie
-            from systeme to reseau;
+        // S2 : pas de feu (fumée diluée / bruit de mesure), poursuite de la surveillance
+        occurrence notifierAlerteFeuS2 {
+            part uniteTraitement : UniteTraitement;
 
-        message transmettreAlerte
-            from reseau to infrastructureDistante;
-
-        // NOTIFICATION
-        message notifierServicesSecours
-            from infrastructureDistante to pompier;
-
-        message notifierAgentForestier
-            from infrastructureDistante to gardeNature;
-
-        message notifierAutorites
-            from infrastructureDistante to autorites;
-
-        // CONFIRMATION
-        message confirmerReception
-            from infrastructureDistante to reseau;
-
-        message confirmerTransmission
-            from reseau to systeme;
+            message acquerirMesures of Mesures from uniteTraitement to uniteTraitement;
+            message poursuivreSurveillance of EtatDispositif from uniteTraitement to uniteTraitement;
+        }
     }
 }

@@ -1,67 +1,50 @@
 package sdff {
-
-    //ACTEURS 
-    part def Operateur;
-    part def ServicesSecours;
-    part def AgentForestier;
-    part def AutoritesLocales;
-
-// ELEMENTS EXTERIEURS
-    part def EnvironnementNaturel;
-    part def PhenomenesNaturels;
-    part def SourceEnergie;
-    part def InfrastructureReceptionDistante;
-    part def ReseauCommunication;
-
- // SYSTEME ETUDIE
-    part def DetectionFeuForet :> sdff::parts::DetectionFeuForet;
+    private import sdff::parts::*;
 
     part def ContexteGlobal {
 
         // ACTEURS
-        part technicien_de_maintenance : Operateur;
-        part sapeur_pompier : ServicesSecours;
-        part garde_nature : AgentForestier;
+        part technicien : Technicien;
+        part operateurQG : OperateurQG;
+        part servicesSecours : ServicesSecours;
+        part gardeNature : AgentForestier;
         part autorites : AutoritesLocales;
 
-        // SYSTEME
-        part sdff : DetectionFeuForet;
+        // SYSTEME ETUDIE
+        part systeme : DetectionFeuForet;
 
         // ENVIRONNEMENT
         part environnement : EnvironnementNaturel;
-        part incendie : PhenomenesNaturels;
-        part fumee : PhenomenesNaturels;
-        part vent : PhenomenesNaturels;
-        part conditions_meteo : PhenomenesNaturels;
+        part incendie : Incendie;
+        part fumee : Fumee;
+        part ventExterieur : Vent;
+        part meteo : Meteo;
 
-        // ENERGIE EXTERIEURE
+        // ENERGIE ET INFRASTRUCTURES EXTERIEURES
         part soleil : SourceEnergie;
-
-        // INFRASTRUCTURES EXTERIEURES
         part infrastructureDistante : InfrastructureReceptionDistante;
         part reseau : ReseauCommunication;
 
-        // INTERACTIONS AVEC LES ACTEURS
-        flow utilise from sapeur_pompier to sdff;
-        flow utilise from garde_nature to sdff;
-        flow supervise from technicien_de_maintenance to sdff;
-        flow informe from sdff to autorites;
+        // INTERACTIONS SUR PORTS
+        connect operateurQG.ihm to systeme.versOperateur;
+        connect systeme.versReseau to reseau.coteSDFF;
+        connect reseau.coteInfra to infrastructureDistante.entree;
+
+        // LES SECOURS RECOIVENT L'ALERTE (sens corrige)
+        connect infrastructureDistante.notification to servicesSecours.reception;
+
+        // ENERGIE SOLAIRE : le soleil alimente les panneaux des noeuds
+        connect soleil.sortie to systeme.noeud.moduleEnergie.panneauSolaire.lumiere;
+
+        // INTERACTIONS AVEC LES ACTEURS SANS PORT DEDIE
+        flow informe from systeme to autorites;
+        flow informe from systeme to gardeNature;
 
         // INTERACTIONS AVEC L'ENVIRONNEMENT
-        flow influence from environnement to sdff;
-        flow detecte from incendie to sdff;
-        flow detecte from fumee to sdff;
-        flow influence from vent to sdff;
-        flow influence from conditions_meteo to sdff;
-
-        // INTERACTION ENERGETIQUE
-        flow energie from soleil to sdff;
-
-        // COMMUNICATION
-        flow transmet from sdff to reseau;
-        flow transmet from reseau to infrastructureDistante;
-        flow transmet from infrastructureDistante to sdff;
-        
-
+        flow influence from environnement to systeme;
+        flow detecte from incendie to systeme;
+        flow detecte from fumee to systeme;
+        flow influence from ventExterieur to systeme;
+        flow influence from meteo to systeme;
     }
 }
