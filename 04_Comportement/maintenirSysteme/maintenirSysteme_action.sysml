@@ -28,7 +28,7 @@ package sdff {
         decide decide2;
 
         first start;
-        succession start if maintenanceDemandee then listerDispositifsEnPanne;
+        succession first start if maintenanceDemandee then listerDispositifsEnPanne;
         then merge0;
         then selectionnerDispositif;
         then merge1;
@@ -38,14 +38,14 @@ package sdff {
             if liaisonDegradee then reorienterAntenne;
             if dispositifDefaillant then remplacerDispositif;
             if anomalieInconnue then merge2;
-        succession remplacerBatterie then merge2;
-        succession reorienterAntenne then merge2;
-        succession remplacerDispositif then merge2;
-        succession merge2 then testerDispositif;
+        succession first  remplacerBatterie then merge2;
+        succession first reorienterAntenne then merge2;
+        succession first remplacerDispositif then merge2;
+        succession first merge2 then testerDispositif;
         then decideTest;
             if testReussi then remettreEnService;
             else merge1;
-        succession remettreEnService then decide2;
+        succession first  remettreEnService then decide2;
             if maintenanceTerminee then done;
             else merge0;
     }
