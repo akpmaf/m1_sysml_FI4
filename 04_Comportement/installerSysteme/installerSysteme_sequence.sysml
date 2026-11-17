@@ -1,77 +1,75 @@
-
 package sdff {
     private import sdff::parts::*;
 
-    part def Capteurs;
-    part def Cameras;
-    part def SystemeCommunication;
-    part def EquipementInstallation;
-
     package sequences {
 
-        // Scenario 1 : installation du systeme de detection
+        // S1 : installation nominale
         occurrence installerSystemeS1 {
-
             part technicien : Technicien;
-            part systeme : SystemeDetectionFeu;
+            part supervision : InterfaceSupervision;
+            part dispositif : DispositifDetection;
+            part passerelle : Passerelle;
             part equipement : EquipementInstallation;
-            part capteurs : Capteurs;
-            part cameras : Cameras;
-            part communication : SystemeCommunication;
 
-            // Demarrage de l'installation
-            message installerSysteme
-                from technicien to systeme;
+            message verifierSite from technicien to supervision;
+            message confirmerSiteConforme of EtatSysteme from supervision to technicien;
 
-            message demanderVerification
-                from technicien to systeme;
+            message installerCapteurs from technicien to dispositif;
+            message installerCameras from technicien to dispositif;
+            message installerModuleRadio from technicien to dispositif;
+            message installerPasserelle from technicien to passerelle;
 
-            message confirmerSite
-                from systeme to technicien;
+            message connecterEquipements from technicien to passerelle;
+            message verifierConnexions from passerelle to dispositif;
+            message confirmerConnexions of EtatDispositif from dispositif to passerelle;
 
-            // Installation des equipements
-            message installer of EquipementInstallation
-                from technicien to equipement;
+            message demarrerSysteme from technicien to supervision;
+            message testerFonctionnement from supervision to dispositif;
+            message resultatTest of ResultatTest from dispositif to supervision;
+            message validerInstallation of EtatSysteme from supervision to technicien;
+        }
 
-            message installerCapteurs
-                from equipement to capteurs;
+        // S2 : site non conforme, puis autre site
+        occurrence installerSystemeS2 {
+            part technicien : Technicien;
+            part supervision : InterfaceSupervision;
 
-            message installerCameras
-                from equipement to cameras;
+            message verifierSite1 from technicien to supervision;
+            message signalerSiteNonConforme of Diagnostic from supervision to technicien;
+            message choisirAutreSite from technicien to supervision;
+            message verifierSite2 from technicien to supervision;
+            message confirmerSiteConforme of EtatSysteme from supervision to technicien;
+        }
 
-            message installerCommunication
-                from equipement to communication;
+        // S3 : connexions incorrectes, puis correction
+        occurrence installerSystemeS3 {
+            part technicien : Technicien;
+            part supervision : InterfaceSupervision;
+            part dispositif : DispositifDetection;
+            part passerelle : Passerelle;
 
-            // Connexion des equipements
-            message connecterCapteurs
-                from capteurs to systeme;
+            message connecterEquipements from technicien to passerelle;
+            message verifierConnexions1 from passerelle to dispositif;
+            message signalerConnexionDefaillante of Diagnostic from dispositif to passerelle;
+            message corrigerProblemes from technicien to dispositif;
+            message verifierConnexions2 from passerelle to dispositif;
+            message confirmerConnexionsCorrectes of EtatDispositif from dispositif to passerelle;
+        }
 
-            message connecterCameras
-                from cameras to systeme;
+        // S4 : test échoué, puis correction et nouveau test
+        occurrence installerSystemeS4 {
+            part technicien : Technicien;
+            part supervision : InterfaceSupervision;
+            part dispositif : DispositifDetection;
 
-            message connecterCommunication
-                from communication to systeme;
-
-            // Verification du fonctionnement
-            message verifierCapteurs
-                from systeme to capteurs;
-
-            message verifierCameras
-                from systeme to cameras;
-
-            message verifierCommunication
-                from systeme to communication;
-
-            message from capteurs to systeme;
-            message from cameras to systeme;
-            message from communication to systeme;
-
-            // Validation de l'installation
-            message validerInstallation
-                from systeme to technicien;
-
-            message terminerInstallation
-                from technicien to systeme;
+            message demarrerSysteme from technicien to supervision;
+            message testerFonctionnement1 from supervision to dispositif;
+            message signalerEchecTest of ResultatTest from dispositif to supervision;
+            message identifierProblemes from supervision to technicien;
+            message corrigerProblemes from technicien to dispositif;
+            message testerFonctionnement2 from supervision to dispositif;
+            message confirmerTestReussi of ResultatTest from dispositif to supervision;
+            message validerInstallation of EtatSysteme from supervision to technicien;
         }
     }
 }
