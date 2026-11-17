@@ -1,88 +1,82 @@
 package sdff {
     private import sdff::parts::*;
-    part def ListeDispositifsEnPanne;
-    part def Diagnostic;
-    part def ResultatTest;
-    part def DetecteurFeu;
-    part def DispositifDetection;
-    part def ModuleRadio;
-    part def ModuleEnergie;
-    part def Passerelle;
-    part def InterfaceSupervision;
-    part def Alerte;
-    part def AccuseReception;
-    part def StatutEnvoi;
-    part def NiveauEnergie;
-    part def QualiteLiaison;
-    part def EtatDispositif;
-    part def EtatSysteme;
-    part def DispositifEnPanne;
-   
-   
-   
-     package sequences {
 
-        // Scénario 1 : test réussi
+    package sequences {
+
+        // S1 : intervention batterie (énergie faible)
         occurrence maintenirSystemeS1 {
-            part interfaceSupervision : InterfaceSupervision;
+            part technicien : Technicien;
+            part supervision : InterfaceSupervision;
             part passerelle : Passerelle;
             part dispositif : DispositifDetection;
             part moduleEnergie : ModuleEnergie;
 
-            message maintenirSysteme from interfaceSupervision to passerelle;
-            message listePannes of ListeDispositifsEnPanne from passerelle to interfaceSupervision;
-
-            message diagnostiquer from interfaceSupervision to passerelle;
-            message demanderEtat from passerelle to dispositif;
+            message listerDispositifsEnPanne from technicien to supervision;
+            message interrogerPannes of Commande from supervision to passerelle;
+            message listePannes of ListeDispositifsEnPanne from passerelle to supervision;
+            message selectionnerDispositif of Commande from technicien to supervision;
+            message diagnostiquerDispositif from supervision to passerelle;
+            message demanderEtat of Commande from passerelle to dispositif;
             message lireNiveauEnergie from dispositif to moduleEnergie;
             message niveauEnergie of NiveauEnergie from moduleEnergie to dispositif;
-            message etat of EtatDispositif from dispositif to passerelle;
-            message diagnostic of Diagnostic from passerelle to interfaceSupervision;
-
-            message tester from interfaceSupervision to passerelle;
-            message demanderTest from passerelle to dispositif;
-            message resultat of ResultatTest from dispositif to passerelle;
-            message resultatTest of ResultatTest from passerelle to interfaceSupervision;
-
-            message remettreEnService from interfaceSupervision to passerelle;
-            message activer from passerelle to dispositif;
-            message from dispositif to passerelle;
-            message from passerelle to interfaceSupervision;
+            message rendreDiagnostic of Diagnostic from dispositif to passerelle;
+            message rendreCompteDiagnostic of Diagnostic from passerelle to supervision;
+            message demanderRemplacementBatterie of Commande from supervision to technicien;
+            message remplacerBatterie from technicien to dispositif;
+            message testerDispositif from supervision to passerelle;
+            message resultatTest of ResultatTest from passerelle to supervision;
+            message remettreEnService from technicien to passerelle;
+            message confirmerRemiseEnService of EtatSysteme from passerelle to technicien;
         }
 
-        // Scénario 2 : test échoué puis nouveau diagnostic
+        // S2 : intervention antenne (liaison dégradée)
         occurrence maintenirSystemeS2 {
-            part interfaceSupervision : InterfaceSupervision;
+            part technicien : Technicien;
+            part supervision : InterfaceSupervision;
             part passerelle : Passerelle;
             part dispositif : DispositifDetection;
+            part moduleRadio : ModuleRadio;
 
-            message maintenirSysteme from interfaceSupervision to passerelle;
-            message listePannes of ListeDispositifsEnPanne from passerelle to interfaceSupervision;
+            message listerDispositifsEnPanne from technicien to supervision;
+            message interrogerPannes of Commande from supervision to passerelle;
+            message listePannes of ListeDispositifsEnPanne from passerelle to supervision;
+            message selectionnerDispositif of Commande from technicien to supervision;
+            message diagnostiquerDispositif from supervision to passerelle;
+            message mesurerLiaison of Commande from passerelle to dispositif;
+            message mesurerQualite from dispositif to moduleRadio;
+            message rendreQualite of QualiteLiaison from moduleRadio to dispositif;
+            message rendreDiagnostic of Diagnostic from dispositif to passerelle;
+            message rendreCompteDiagnostic of Diagnostic from passerelle to supervision;
+            message demanderReorientation of Commande from supervision to technicien;
+            message reorienterAntenne from technicien to dispositif;
+            message testerDispositif from supervision to passerelle;
+            message resultatTest of ResultatTest from passerelle to supervision;
+            message remettreEnService from technicien to passerelle;
+            message confirmerRemiseEnService of EtatSysteme from passerelle to technicien;
+        }
 
-            message diagnostiquer from interfaceSupervision to passerelle;
-            message demanderEtat from passerelle to dispositif;
-            message etat of EtatDispositif from dispositif to passerelle;
-            message diagnostic of Diagnostic from passerelle to interfaceSupervision;
+        // S3 : remplacement complet du dispositif
+        occurrence maintenirSystemeS3 {
+            part technicien : Technicien;
+            part supervision : InterfaceSupervision;
+            part passerelle : Passerelle;
+            part dispositifPanne : DispositifDetection;
+            part dispositifNeuf : DispositifDetection;
 
-            message tester from interfaceSupervision to passerelle;
-            message demanderTest from passerelle to dispositif;
-            message resultat of ResultatTest from dispositif to passerelle;
-            message resultatTest of ResultatTest from passerelle to interfaceSupervision;
-
-            message diagnostiquer from interfaceSupervision to passerelle;
-            message demanderEtat from passerelle to dispositif;
-            message etat of EtatDispositif from dispositif to passerelle;
-            message diagnostic of Diagnostic from passerelle to interfaceSupervision;
-
-            message tester from interfaceSupervision to passerelle;
-            message demanderTest from passerelle to dispositif;
-            message resultat of ResultatTest from dispositif to passerelle;
-            message resultatTest of ResultatTest from passerelle to interfaceSupervision;
-
-            message remettreEnService from interfaceSupervision to passerelle;
-            message activer from passerelle to dispositif;
-            message from dispositif to passerelle;
-            message from passerelle to interfaceSupervision;
+            message listerDispositifsEnPanne from technicien to supervision;
+            message interrogerPannes of Commande from supervision to passerelle;
+            message listePannes of ListeDispositifsEnPanne from passerelle to supervision;
+            message selectionnerDispositif of Commande from technicien to supervision;
+            message diagnostiquerDispositif from supervision to passerelle;
+            message rendreDiagnostic of Diagnostic from passerelle to supervision;
+            message demanderRemplacement of Commande from supervision to technicien;
+            message retirerDispositif from technicien to dispositifPanne;
+            message installerDispositifNeuf from technicien to dispositifNeuf;
+            message connecterDispositifNeuf from technicien to passerelle;
+            message testerDispositif from supervision to passerelle;
+            message resultatTest of ResultatTest from passerelle to supervision;
+            message remettreEnService from technicien to passerelle;
+            message confirmerRemiseEnService of EtatSysteme from passerelle to technicien;
         }
     }
-}    
+}

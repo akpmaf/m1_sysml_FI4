@@ -1,41 +1,48 @@
 package sdff {
-    private import ScalarValues::Boolean;
-    package parts {
-        /* acteurs */
-        part def OperateurQG;
-        part def Technicien;
-
-        /* contexte */
-        part def SystemeDetectionFeu;
-    }
+    private import sdff::parts::*;
+    private import sdff::requirements::*;
 
     package useCases {
-        private import sdff::parts::*;
-
-        actor operateurQG:OperateurQG;
-        actor technicien:Technicien;
+        actor operateurQG : OperateurQG;
+        actor technicien : Technicien;
+        actor servicesSecours : ServicesSecours;
 
         use case notifierAlerteFeu {
-            ref actor operateurQG;
-        }
-        use case exporterInformations {
-            ref actor operateurQG;
-        }
-        use case surveillerEtatSysteme {
-            ref actor operateurQG;
+            subject  systeme : DetectionFeuForet;
+            actor operateurQG;
+            require detectionFeu;
+            require alerteQuartierGeneral;
         }
         use case alerterPompier {
-            ref actor operateurQG;
+            subject  systeme : DetectionFeuForet;
+            actor servicesSecours;
+            require localisationFeu;
+            require alerteQuartierGeneral;
         }
-
+        use case exporterInformation {
+            subject  systeme : DetectionFeuForet;
+            actor operateurQG;
+            require transmissionADistance;
+        }
+        use case surveillerEtatSysteme {
+            subject systeme : DetectionFeuForet;
+             actor operateurQG;
+            require surveillanceEtat;
+        }
         use case installerSysteme {
-            ref actor technicien;
+            subject  systeme : DetectionFeuForet;
+            actor technicien;
+            require fixationArbre;
         }
         use case configurerSysteme {
-            ref actor technicien;
+            subject systeme : DetectionFeuForet;
+            actor technicien;
+            require configurationSysteme;
         }
         use case maintenirSysteme {
-            ref actor technicien;
+            subject  systeme : DetectionFeuForet;
+            actor technicien;
+            require maintenabilite;
         }
     }
 }

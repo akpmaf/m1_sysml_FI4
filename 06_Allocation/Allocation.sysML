@@ -1,129 +1,80 @@
-
 package sdff {
-
     package allocations {
         private import sdff::*;
-        private import sdff::ContexteGlobal;
-        private import sdff::exporterInformation;
+        private import sdff::parts::*;
 
         part exploitation : ContexteGlobal;
 
-    package allocations {
-        private import sdff::architecture::*;
-        private import sdff::*;
-        
-        // alerterPompier  //
-        allocate alerterPompier.surveillerEnvironnement to exploitation.sdff.noeud.detecteur.capteurs;
-        allocate alerterPompier.surveillerEnvironnement to exploitation.sdff.noeud.detecteur.cameras;
-        allocate alerterPompier.surveillerEnvironnement to exploitation.sdff.noeud.uniteTraitement;
-        allocate alerterPompier.composerAlerte to exploitation.sdff.noeud.uniteTraitement;
-        allocate alerterPompier.envoyerAlerteRadio to exploitation.sdff.noeud.moduleRadio;
-        allocate alerterPompier.relayerAlerteAuxSecours to exploitation.sdff.passerelle;
-        allocate alerterPompier.relayerAlerteAuxSecours to exploitation.infrastructureDistante;
-
-        //  configurerSysteme  //
-        allocate configurerSysteme.lancerRechercheDispositif to exploitation.sdff.supervision;
-        allocate configurerSysteme.lancerRechercheDispositif to exploitation.sdff.passerelle;
-        allocate configurerSysteme.lancerRechercheDispositif to exploitation.technicien_de_maintenance;
-        allocate configurerSysteme.etablirCommunicationAvecDispositif to exploitation.sdff.supervision;
-        allocate configurerSysteme.etablirCommunicationAvecDispositif to exploitation.sdff.passerelle;
-        allocate configurerSysteme.etablirCommunicationAvecDispositif to exploitation.sdff.noeud.moduleRadio;
-        allocate configurerSysteme.configurerCommunicationRadio to exploitation.sdff.supervision;
-        allocate configurerSysteme.configurerCommunicationRadio to exploitation.sdff.noeud.moduleRadio;
-        allocate configurerSysteme.configurerParametresDetection to exploitation.sdff.supervision;
-        allocate configurerSysteme.configurerParametresDetection to exploitation.sdff.noeud.uniteTraitement;
-        allocate configurerSysteme.configurerLocalisation to exploitation.sdff.supervision;
-        allocate configurerSysteme.configurerLocalisation to exploitation.sdff.noeud.uniteTraitement;
-        allocate configurerSysteme.verifierConfiguration to exploitation.sdff.supervision;
-        allocate configurerSysteme.verifierConfiguration to exploitation.sdff.noeud.uniteTraitement;
-        allocate configurerSysteme.enregistrerConfiguration to exploitation.sdff.noeud.uniteTraitement;
-        allocate configurerSysteme.confirmerConfiguration to exploitation.sdff.supervision;
-
-        // exporterInformation  //
-        allocate exporterInformation.recevoirDemandeExportation to exploitation.sdff.supervision;
-        allocate exporterInformation.selectionnerInformations to exploitation.sdff.supervision;
-        allocate exporterInformation.selectionnerInformations to exploitation.sdff.passerelle;
-        allocate exporterInformation.selectionnerInformations to exploitation.infrastructureDistante;
-        allocate exporterInformation.verifierInformations to exploitation.sdff.supervision;
-        allocate exporterInformation.preparerFichier to exploitation.sdff.supervision;
-        allocate exporterInformation.exporterFichier to exploitation.sdff.supervision;
-        allocate exporterInformation.transmettreFichier to exploitation.sdff.passerelle;
-        allocate exporterInformation.confirmerExportation to exploitation.sdff.supervision;
-        allocate exporterInformation.afficherMessageErreur to exploitation.sdff.supervision;
-
-        //  installerSysteme  //
-        allocate installerSysteme.verifierSite to exploitation.technicien_de_maintenance;
-        allocate installerSysteme.choisirAutreSite to exploitation.technicien_de_maintenance;
-        allocate installerSysteme.installerCapteurs to exploitation.sdff.noeud.detecteur.capteurs;
-        allocate installerSysteme.installerCapteurs to exploitation.technicien_de_maintenance;
-        allocate installerSysteme.installerCameras to exploitation.sdff.noeud.detecteur.cameras;
-        allocate installerSysteme.installerCameras to exploitation.technicien_de_maintenance;
-        allocate installerSysteme.installerModuleRadio to exploitation.sdff.noeud.moduleRadio;
-        allocate installerSysteme.installerModuleRadio to exploitation.technicien_de_maintenance;
-        allocate installerSysteme.installerPasserelle to exploitation.sdff.passerelle;
-        allocate installerSysteme.installerPasserelle to exploitation.technicien_de_maintenance;
-        allocate installerSysteme.connecterEquipements to exploitation.sdff.noeud.uniteTraitement;
-        allocate installerSysteme.connecterEquipements to exploitation.sdff.passerelle;
-        allocate installerSysteme.connecterEquipements to exploitation.technicien_de_maintenance;
-        allocate installerSysteme.verifierConnexions to exploitation.sdff.noeud.uniteTraitement;
-        allocate installerSysteme.verifierConnexions to exploitation.sdff.passerelle;
-        allocate installerSysteme.verifierConnexions to exploitation.sdff.supervision;
-        allocate installerSysteme.demarrerSysteme to exploitation.sdff.noeud.uniteTraitement;
-        allocate installerSysteme.demarrerSysteme to exploitation.sdff.noeud.moduleEnergie;
-        allocate installerSysteme.testerFonctionnement to exploitation.sdff.noeud.uniteTraitement;
-        allocate installerSysteme.testerFonctionnement to exploitation.sdff.passerelle;
-        allocate installerSysteme.testerFonctionnement to exploitation.sdff.supervision;
-        allocate installerSysteme.identifierProblemes to exploitation.sdff.supervision;
-        allocate installerSysteme.identifierProblemes to exploitation.technicien_de_maintenance;
-        allocate installerSysteme.corrigerProblemes to exploitation.technicien_de_maintenance;
-        allocate installerSysteme.validerInstallation to exploitation.sdff.supervision;
-        allocate installerSysteme.validerInstallation to exploitation.technicien_de_maintenance;
-
-        //  maintenirSysteme  //
-        allocate maintenirSysteme.listerDispositifsEnPanne to exploitation.sdff.passerelle;
-        allocate maintenirSysteme.listerDispositifsEnPanne to exploitation.sdff.supervision;
-        allocate maintenirSysteme.selectionnerDispositif to exploitation.sdff.supervision;
-        allocate maintenirSysteme.diagnostiquerDispositif to exploitation.sdff.noeud.uniteTraitement;
-        allocate maintenirSysteme.diagnostiquerDispositif to exploitation.sdff.noeud.moduleRadio;
-        allocate maintenirSysteme.diagnostiquerDispositif to exploitation.sdff.noeud.moduleEnergie;
-        allocate maintenirSysteme.diagnostiquerDispositif to exploitation.sdff.passerelle;
-        allocate maintenirSysteme.diagnostiquerDispositif to exploitation.sdff.supervision;
-        allocate maintenirSysteme.remplacerBatterie to exploitation.sdff.noeud.moduleEnergie;
-        allocate maintenirSysteme.remplacerBatterie to exploitation.technicien_de_maintenance;
-        allocate maintenirSysteme.reorienterAntenne to exploitation.sdff.noeud.moduleRadio;
-        allocate maintenirSysteme.reorienterAntenne to exploitation.technicien_de_maintenance;
-        allocate maintenirSysteme.remplacerDispositif to exploitation.sdff.noeud;
-        allocate maintenirSysteme.remplacerDispositif to exploitation.technicien_de_maintenance;
-        allocate maintenirSysteme.testerDispositif to exploitation.sdff.noeud.uniteTraitement;
-        allocate maintenirSysteme.testerDispositif to exploitation.sdff.passerelle;
-        allocate maintenirSysteme.testerDispositif to exploitation.sdff.supervision;
-        allocate maintenirSysteme.remettreEnService to exploitation.sdff.noeud;
-        allocate maintenirSysteme.remettreEnService to exploitation.sdff.passerelle;
-        allocate maintenirSysteme.remettreEnService to exploitation.sdff.supervision;
+        //  alerterPompier  //
+        allocate alerterPompier.surveillerEnvironnement to exploitation.systeme.noeud.detecteur.capteurFumee;
+        allocate alerterPompier.surveillerEnvironnement to exploitation.systeme.noeud.detecteur.capteurTemperature;
+        allocate alerterPompier.surveillerEnvironnement to exploitation.systeme.noeud.detecteur.capteurHumidite;
+        allocate alerterPompier.surveillerEnvironnement to exploitation.systeme.noeud.detecteur.capteurVent;
+        allocate alerterPompier.composerAlerte to exploitation.systeme.noeud.uniteTraitement;
+        allocate alerterPompier.envoyerAlerteRadio to exploitation.systeme.noeud.moduleRadio;
+        allocate alerterPompier.abandonnerEnvoi to exploitation.systeme.noeud.moduleRadio;
+        allocate alerterPompier.relayerAlerteAuxSecours to exploitation.systeme.passerelle;
 
         //  notifierAlerteFeu  //
-        allocate notifierAlerteFeu.recevoirDonneesCapteurs to exploitation.sdff.noeud.detecteur.capteurs;
-        allocate notifierAlerteFeu.recevoirDonneesCapteurs to exploitation.sdff.noeud.detecteur.cameras;
-        allocate notifierAlerteFeu.recevoirDonneesCapteurs to exploitation.sdff.noeud.uniteTraitement;
-        allocate notifierAlerteFeu.analyserDonnees to exploitation.sdff.noeud.uniteTraitement;
-        allocate notifierAlerteFeu.poursuivreSurveillance to exploitation.sdff.noeud.uniteTraitement;
-        allocate notifierAlerteFeu.genererAlerte to exploitation.sdff.noeud.uniteTraitement;
-        allocate notifierAlerteFeu.transmettreNotification to exploitation.sdff.noeud.moduleRadio;
-        allocate notifierAlerteFeu.transmettreNotification to exploitation.sdff.passerelle;
-        allocate notifierAlerteFeu.notifierOperateurQG to exploitation.sdff.passerelle;
-        allocate notifierAlerteFeu.notifierOperateurQG to exploitation.infrastructureDistante;
-        allocate notifierAlerteFeu.consulterAlerte to exploitation.infrastructureDistante;
+        allocate notifierAlerteFeu.recevoirDonneesCapteurs to exploitation.systeme.noeud.detecteur.capteurFumee;
+        allocate notifierAlerteFeu.recevoirDonneesCapteurs to exploitation.systeme.noeud.detecteur.capteurTemperature;
+        allocate notifierAlerteFeu.analyserDonnees to exploitation.systeme.noeud.uniteTraitement.logicielAnalyse;
+        allocate notifierAlerteFeu.poursuivreSurveillance to exploitation.systeme.noeud.uniteTraitement;
+        allocate notifierAlerteFeu.genererAlerte to exploitation.systeme.noeud.uniteTraitement;
+        allocate notifierAlerteFeu.transmettreNotification to exploitation.systeme.noeud.moduleRadio;
+        allocate notifierAlerteFeu.notifierOperateurQG to exploitation.systeme.passerelle;
 
         //  surveillerEtatSysteme  //
-        allocate surveillerEtatSysteme.collecterEtatDispositifs to exploitation.sdff.noeud.uniteTraitement;
-        allocate surveillerEtatSysteme.collecterEtatDispositifs to exploitation.sdff.noeud.moduleRadio;
-        allocate surveillerEtatSysteme.collecterEtatDispositifs to exploitation.sdff.noeud.moduleEnergie;
-        allocate surveillerEtatSysteme.collecterEtatDispositifs to exploitation.sdff.passerelle;
-        allocate surveillerEtatSysteme.evaluerEtatDispositifs to exploitation.sdff.passerelle;
-        allocate surveillerEtatSysteme.evaluerEtatDispositifs to exploitation.sdff.supervision;
-        allocate surveillerEtatSysteme.signalerDispositifEnPanne to exploitation.sdff.passerelle;
-        allocate surveillerEtatSysteme.signalerDispositifEnPanne to exploitation.sdff.supervision;
-        allocate surveillerEtatSysteme.afficherEtatNormal to exploitation.sdff.supervision;
+        allocate surveillerEtatSysteme.collecterEtatDispositifs to exploitation.systeme.passerelle;
+        allocate surveillerEtatSysteme.evaluerEtatDispositifs to exploitation.systeme.passerelle;
+        allocate surveillerEtatSysteme.signalerDispositifEnPanne to exploitation.systeme.supervision;
+        allocate surveillerEtatSysteme.afficherEtatNormal to exploitation.systeme.supervision;
+
+        //  exporterInformation  //
+        allocate exporterInformation.recevoirDemandeExportation to exploitation.systeme.supervision;
+        allocate exporterInformation.selectionnerInformations to exploitation.systeme.supervision;
+        allocate exporterInformation.verifierInformations to exploitation.systeme.supervision;
+        allocate exporterInformation.preparerFichier to exploitation.systeme.supervision;
+        allocate exporterInformation.exporterFichier to exploitation.systeme.passerelle;
+        allocate exporterInformation.transmettreFichier to exploitation.systeme.passerelle;
+        allocate exporterInformation.confirmerExportation to exploitation.systeme.supervision;
+        allocate exporterInformation.afficherMessageErreur to exploitation.systeme.supervision;
+        allocate exporterInformation.abandonnerExportation to exploitation.systeme.supervision;
+
+        //  installerSysteme  //  (tout le travail physique est porté par le technicien)
+        allocate installerSysteme.verifierSite to exploitation.technicien;
+        allocate installerSysteme.choisirAutreSite to exploitation.technicien;
+        allocate installerSysteme.installerCapteurs to exploitation.technicien;
+        allocate installerSysteme.installerCameras to exploitation.technicien;
+        allocate installerSysteme.installerModuleRadio to exploitation.technicien;
+        allocate installerSysteme.installerPasserelle to exploitation.technicien;
+        allocate installerSysteme.connecterEquipements to exploitation.technicien;
+        allocate installerSysteme.verifierConnexions to exploitation.technicien;
+        allocate installerSysteme.demarrerSysteme to exploitation.systeme.noeud.uniteTraitement;
+        allocate installerSysteme.testerFonctionnement to exploitation.systeme.supervision;
+        allocate installerSysteme.identifierProblemes to exploitation.systeme.supervision;
+        allocate installerSysteme.corrigerProblemes to exploitation.technicien;
+        allocate installerSysteme.validerInstallation to exploitation.technicien;
+
+        //  configurerSysteme  //
+        allocate configurerSysteme.lancerRechercheDispositif to exploitation.systeme.supervision;
+        allocate configurerSysteme.etablirCommunicationAvecDispositif to exploitation.systeme.passerelle;
+        allocate configurerSysteme.configurerCommunicationRadio to exploitation.systeme.supervision;
+        allocate configurerSysteme.configurerParametresDetection to exploitation.systeme.noeud.uniteTraitement;
+        allocate configurerSysteme.configurerLocalisation to exploitation.systeme.noeud.localisation;
+        allocate configurerSysteme.verifierConfiguration to exploitation.systeme.supervision;
+        allocate configurerSysteme.enregistrerConfiguration to exploitation.systeme.noeud.uniteTraitement;
+        allocate configurerSysteme.confirmerConfiguration to exploitation.systeme.supervision;
+        allocate configurerSysteme.abandonnerConfiguration to exploitation.systeme.supervision;
+
+        //  maintenirSysteme  //
+        allocate maintenirSysteme.listerDispositifsEnPanne to exploitation.systeme.passerelle;
+        allocate maintenirSysteme.selectionnerDispositif to exploitation.systeme.supervision;
+        allocate maintenirSysteme.diagnostiquerDispositif to exploitation.systeme.noeud.uniteTraitement;
+        allocate maintenirSysteme.remplacerBatterie to exploitation.technicien;
+        allocate maintenirSysteme.reorienterAntenne to exploitation.technicien;
+        allocate maintenirSysteme.remplacerDispositif to exploitation.technicien;
+        allocate maintenirSysteme.testerDispositif to exploitation.systeme.passerelle;
+        allocate maintenirSysteme.remettreEnService to exploitation.systeme.passerelle;
     }
-}
 }

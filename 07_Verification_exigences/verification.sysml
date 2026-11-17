@@ -1,216 +1,137 @@
 package sdff {
+    private import sdff::parts::*;
+    private import sdff::requirements::*;
 
-
-    package parts {
-        /* acteurs */
-        part def OperateurQG;
-        part def Technicien;
-
-        
-        part def DetectionFeuForet;
-
-        
-        part def CapteurFumee;
-        part def CapteurTemperature;
-        part def CapteurHumidite;
-        part def CapteurVent;
-        part def ModuleGPS;
-        part def MicroControleur;
-        part def LogicielAnalyse;
-        part def UniteRadio;
-        part def PanneauSolaire;
-        part def Batterie;
-        part def Boitier;
-        part def SystemeFixation;
-        part def InterfaceConfiguration;
-    }
-
-    
-    package requirements {
-        requirement specificationsSDFF {
-            doc /* le système répond aux catégories d'exigences listées ci-dessous */
-        }
-        requirement fonctions specializes specificationsSDFF {
-            doc /* le système doit comprendre les fonctions listées ci-dessous */
-        }
-        requirement interactionsMaterielles specializes specificationsSDFF {
-            doc /* le système doit pouvoir disposer des interactions matérielles listées */
-        }
-        requirement contraintes specializes specificationsSDFF {
-            doc /* le système doit respecter les contraintes ci-dessous */
-        }
-
-        /* fonctions */
-        requirement detectionFeu specializes fonctions {
-            doc /* le système doit pouvoir détecter le départ d'un feu */
-        }
-        requirement alerteQuartierGeneral specializes fonctions {
-            doc /* le système doit pouvoir alerter automatiquement le quartier général */
-        }
-        requirement localisationFeu specializes fonctions {
-            doc /* le système doit pouvoir localiser précisément le feu */
-        }
-        requirement transmissionADistance specializes fonctions {
-            doc /* le système doit pouvoir envoyer des informations à distance */
-        }
-        requirement mesureEnvironnement specializes fonctions {
-            doc /* le système doit pouvoir mesurer les paramètres environnementaux */
-        }
-        requirement preventionIncendie specializes fonctions {
-            doc /* le système doit évaluer le risque de départ d'incendie jusqu'à 24 heures à l'avance */
-        }
-
-        
-        requirement fixationArbre specializes interactionsMaterielles {
-            doc /* le système doit pouvoir être fixé correctement sur un arbre de forêt */
-        }
-        requirement configurationSysteme specializes interactionsMaterielles {
-            doc /* le système doit pouvoir être configuré facilement par le technicien */
-        }
-        requirement liaisonRadio specializes interactionsMaterielles {
-            doc /* le système doit être pourvu d'une liaison radio */
-        }
-
-        /* contraintes */
-        requirement coutRevient specializes contraintes {
-            doc /* le prix de revient doit être inférieur à 1000€ */
-        }
-        requirement dimensionsReduites specializes contraintes {
-            doc /* les dimensions du système doivent être réduites */
-        }
-        requirement autonomieEnergetique specializes contraintes {
-            doc /* autonomie énergétique suffisante (24h/24) */
-        }
-        requirement resistanceintemperies specializes contraintes {
-            doc /* le système doit résister aux intempéries (pluie, température, vent) */
-        }
-        requirement detectionPrecoce specializes contraintes {
-            doc /* détection des premiers signes d'un départ de feu dès leur apparition */
-        }
-        requirement limitationFaussesAlertes specializes contraintes {
-            doc /* le taux de fausses alertes ne doit pas dépasser 2 % */
-        }
-    }
-
-    /* cas d'utilisation */
-    package useCases {
-        private import sdff::parts::*;
-        private import sdff::requirements::*;
-
-        actor operateurQG : OperateurQG;
-        actor technicien : Technicien;
-
-        use case notifierAlerteFeu {
-            ref actor operateurQG;
-            require detectionFeu;
-            require alerteQuartierGeneral;
-        }
-        use case alerterPompier {
-            ref actor operateurQG;
-            require localisationFeu;
-        }
-        use case exporterInformations {
-            ref actor operateurQG;
-            require transmissionADistance;
-        }
-        use case surveillerEtatSysteme {
-            ref actor operateurQG;
-            require mesureEnvironnement;
-            require preventionIncendie;
-        }
-        use case installerSysteme {
-            ref actor technicien;
-            require fixationArbre;
-        }
-        use case configurerSysteme {
-            ref actor technicien;
-            require configurationSysteme;
-        }
-        use case maintenirSysteme {
-            ref actor technicien;
-        }
-    }
-
-    
+    /* Recette : vérification par essai / mesure */
     package recette {
-        private import sdff::requirements::*;
-
-        verification detectionFeuVerifiee { verify detectionFeu; }
-        verification alerteQGVerifiee { verify alerteQuartierGeneral; }
-        verification localisationVerifiee { verify localisationFeu; }
-        verification transmissionVerifiee { verify transmissionADistance; }
-        verification mesureEnvironnementVerifiee { verify mesureEnvironnement; }
-        verification preventionVerifiee { verify preventionIncendie; }
-        verification fixationVerifiee { verify fixationArbre; }
-        verification configurationVerifiee { verify configurationSysteme; }
-        verification liaisonRadioVerifiee { verify liaisonRadio; }
-        verification fonctionsVerifiees { verify fonctions; }
-        verification interactionsVerifiees { verify interactionsMaterielles; }
+        verification detectionFeuVerifiee {
+            verify detectionFeu;
+            doc /* Méthode : essai en fumée contrôlée. Seuil : alerte générée en moins de 60 s sur 20 essais consécutifs. */
+        }
+        verification alerteQGVerifiee {
+            verify alerteQuartierGeneral;
+            doc /* Méthode : essai de bout en bout avec horodatage. Seuil : délai détection -> QG inférieur ou égal à 2 min. */
+        }
+        verification localisationVerifiee {
+            verify localisationFeu;
+            doc /* Méthode : mesure sur site avec GPS de référence. Seuil : écart inférieur ou égal à 50 m sur 10 points. */
+        }
+        verification transmissionVerifiee {
+            verify transmissionADistance;
+            doc /* Méthode : essai de portée en forêt. Seuil : liaison établie à 5 km ou plus dans 9 cas sur 10. */
+        }
+        verification mesureEnvironnementVerifiee {
+            verify mesureEnvironnement;
+            doc /* Méthode : comparaison avec station météo de référence. Seuil : écart 2 °C max et 5 % HR max, mesures chaque minute. */
+        }
+        verification preventionVerifiee {
+            verify preventionIncendie;
+            doc /* Méthode : analyse a posteriori sur historique météo/incendies. Seuil : risque annoncé 24 h ou plus avant l'événement. */
+        }
+        verification alimentationSolaireVerifiee {
+            verify alimentationSolaire;
+            doc /* Méthode : essai d'énergie (panneau seul, batterie retirée). Seuil : recharge de la batterie constatée après 6 h d'ensoleillement nominal. */
+        }
+        verification raccordementReseauVerifiee {
+            verify raccordementReseau;
+            doc /* Méthode : essai de bout en bout passerelle -> réseau -> infrastructure distante. Seuil : 100 % des alertes testées reçues à l'infrastructure distante. */
+        }
+        verification surveillanceEtatVerifiee {
+            verify surveillanceEtat;
+            doc /* Méthode : essai par panne provoquée (batterie débranchée, antenne masquée). Seuil : panne signalée au QG en moins de 5 min. */
+        }
+        verification fixationVerifiee {
+            verify fixationArbre;
+            doc /* Méthode : inspection + essai d'arrachement. Seuil : tenue 300 N minimum sur tronc de 20 à 80 cm. */
+        }
+        verification configurationVerifiee {
+            verify configurationSysteme;
+            doc /* Méthode : essai chronométré par technicien non expert. Seuil : configuration complète en 15 min maximum. */
+        }
+        verification liaisonRadioVerifiee {
+            verify liaisonRadio;
+            doc /* Méthode : inspection de conception + essai bidirectionnel. Seuil : accusé de réception dans 100 % des essais à portée nominale. */
+        }
     }
 
-    
+    /* Contrôle : vérification par analyse / inspection */
     package controle {
-        private import sdff::requirements::*;
-
-        verification coutControle { verify coutRevient; }
-        verification dimensionsControlees { verify dimensionsReduites; }
-        verification autonomieControlee { verify autonomieEnergetique; }
-        verification intemperiesControlees { verify resistanceintemperies; }
-        verification detectionPrecoceControlee { verify detectionPrecoce; }
-        verification fausseAlerteControlee { verify limitationFaussesAlertes; }
-        verification contraintesControlees { verify contraintes; }
+        verification coutControle {
+            verify coutRevient;
+            doc /* Méthode : analyse de la nomenclature (BOM). Seuil : coût cumulé strictement inférieur à 1000 EUR. */
+        }
+        verification dimensionsControlees {
+            verify dimensionsReduites;
+            doc /* Méthode : inspection (mesure du boîtier). Seuil : volume 5 L max, masse 3 kg max. */
+        }
+        verification autonomieControlee {
+            verify autonomieEnergetique;
+            doc /* Méthode : essai énergie (batterie pleine, sans soleil). Seuil : 7 jours de fonctionnement minimum. */
+        }
+        verification intemperiesControlees {
+            verify resistanceIntemperies;
+            doc /* Méthode : essai de classe IP et essais thermiques en laboratoire. Seuil : IP65, -20 °C à +60 °C. */
+        }
+        verification detectionPrecoceControlee {
+            verify detectionPrecoce;
+            doc /* Méthode : essai en fumée diluée. Seuil : détection du premier seuil en moins de 60 s. */
+        }
+        verification fausseAlerteControlee {
+            verify limitationFaussesAlertes;
+            doc /* Méthode : analyse statistique de campagne d'essais. Seuil : 2 % de fausses alertes maximum. */
+        }
+        verification maintenabiliteControlee {
+            verify maintenabilite;
+            doc /* Méthode : essai chronométré (batterie, antenne, dispositif). Seuil : 30 min maximum par intervention. */
+        }
     }
 
-   
-    package systeme {
-        private import sdff::parts::*;
-        private import sdff::requirements::*;
+    /* Satisfaction : les exigences sont satisfaites par les blocs réels de generale.sysml */
+    package satisfaction {
 
-        part capteurFumee : CapteurFumee {
-            satisfy detectionFeu;
-            satisfy detectionPrecoce;
-        }
-        part capteurTemperature : CapteurTemperature {
-            satisfy detectionFeu;
-            satisfy mesureEnvironnement;
-        }
-        part capteurHumidite : CapteurHumidite {
-            satisfy mesureEnvironnement;
-        }
-        part capteurVent : CapteurVent {
-            satisfy mesureEnvironnement;
-        }
-        part moduleGPS : ModuleGPS {
-            satisfy localisationFeu;
-        }
-        part microControleur : MicroControleur {
-            satisfy detectionFeu;
-            satisfy alerteQuartierGeneral;
-        }
-        part logicielAnalyse : LogicielAnalyse {
-            satisfy preventionIncendie;
-            satisfy limitationFaussesAlertes;
-        }
-        part uniteRadio : UniteRadio {
-            satisfy alerteQuartierGeneral;
-            satisfy transmissionADistance;
-            satisfy liaisonRadio;
-        }
-        part panneauSolaire : PanneauSolaire {
-            satisfy autonomieEnergetique;
-        }
-        part batterie : Batterie {
-            satisfy autonomieEnergetique;
-        }
-        part boitier : Boitier {
-            satisfy dimensionsReduites;
-            satisfy resistanceintemperies;
-        }
-        part systemeFixation : SystemeFixation {
-            satisfy fixationArbre;
-        }
-        part interfaceConfiguration : InterfaceConfiguration {
+        part dispositifReference : DispositifDetection {
             satisfy configurationSysteme;
+            part detecteur : DetecteurFeu {
+                part capteurFumee : CapteurFumee {
+                    satisfy detectionFeu;
+                    satisfy detectionPrecoce;
+                }
+                part capteurTemperature : CapteurTemperature { satisfy mesureEnvironnement; }
+                part capteurHumidite : CapteurHumidite { satisfy mesureEnvironnement; }
+                part capteurVent : CapteurVent { satisfy mesureEnvironnement; }
+            }
+            part uniteTraitement : UniteTraitement {
+                part logicielAnalyse : LogicielAnalyse {
+                    satisfy preventionIncendie;
+                    satisfy limitationFaussesAlertes;
+                }
+            }
+            part localisation : ModuleLocalisation { satisfy localisationFeu; }
+            part moduleRadio : ModuleRadio { satisfy liaisonRadio; }
+            part moduleEnergie : ModuleEnergie {
+                part batterie : Batterie { satisfy autonomieEnergetique; }
+                part panneauSolaire : PanneauSolaire { satisfy alimentationSolaire; }
+            }
+            part boitier : Boitier {
+                satisfy dimensionsReduites;
+                satisfy resistanceIntemperies;
+            }
+            part systemeFixation : SystemeFixation { satisfy fixationArbre; }
+        }
+
+        part passerelleReference : Passerelle {
+            satisfy transmissionADistance;
+            satisfy raccordementReseau;
+        }
+
+        part supervisionReference : InterfaceSupervision {
+            satisfy surveillanceEtat;
+        }
+
+        part systemeReference : DetectionFeuForet {
+            satisfy alerteQuartierGeneral;
+            satisfy coutRevient;
+            satisfy maintenabilite;
         }
     }
 }
