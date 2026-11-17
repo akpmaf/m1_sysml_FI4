@@ -18,14 +18,14 @@ package sdff {
     decide decide1;
 
     first start;
-    succession start if consultationDemandee then merge0;
+    succession first start if consultationDemandee then merge0;
     then collecterEtatDispositifs;
     then evaluerEtatDispositifs;
     then decide0;
         if panneDetectee then signalerDispositifEnPanne;
         if etatNormal then afficherEtatNormal;
-    succession signalerDispositifEnPanne then merge1;
-    succession afficherEtatNormal then merge1;
+    succession first signalerDispositifEnPanne then merge1;
+    succession first afficherEtatNormal then merge1;
     then decide1;
         if actualisation then merge0;
         if fermeture then done;}

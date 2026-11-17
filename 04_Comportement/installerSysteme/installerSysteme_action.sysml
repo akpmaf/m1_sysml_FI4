@@ -31,12 +31,12 @@ package sdff {
 
         first start;
 
-        succession start if installationDemandee then mergeSite;
+        succession first start if installationDemandee then mergeSite;
         then verifierSite;
         then decideSite;
             if siteConforme then installerCapteurs;
             else choisirAutreSite;
-        succession choisirAutreSite then mergeSite;
+        succession first choisirAutreSite then mergeSite;
 
         succession installerCapteurs then installerCameras;
         then installerModuleRadio;

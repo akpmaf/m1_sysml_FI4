@@ -30,9 +30,9 @@ package sdff {
             if exportationReussie then transmettreFichier;
             if essaisEpuises then abandonnerExportation;
             else afficherMessageErreur;
-        succession afficherMessageErreur then mergeSelection;
-        succession abandonnerExportation then done;
-        succession transmettreFichier then confirmerExportation;
-        succession confirmerExportation then done;
+        succession first afficherMessageErreur then mergeSelection;
+        succession first abandonnerExportation then done;
+        succession first transmettreFichier then confirmerExportation;
+        succession first confirmerExportation then done;
     }
 }

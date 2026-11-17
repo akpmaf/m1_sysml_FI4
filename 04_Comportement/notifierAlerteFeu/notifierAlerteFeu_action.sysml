@@ -23,9 +23,9 @@ package sdff {
         then decideFeu;
             if feuDetecte then genererAlerte;
             else poursuivreSurveillance;
-        succession poursuivreSurveillance then mergeSurveillance;
+        succession first poursuivreSurveillance then mergeSurveillance;
 
-        succession genererAlerte then transmettreNotification;
+        succession first genererAlerte then transmettreNotification;
         then notifierOperateurQG;
         then consulterAlerte;
         then done;
