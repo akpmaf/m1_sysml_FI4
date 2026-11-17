@@ -1,80 +1,68 @@
-
 package architectureSysteme {
 
     /* définitions */
     package definitions {
         part def DetectionFeuForet;
 
-        /* composants physiques */
+        /* système étudié : noeud de détection + passerelle + supervision */
+        part def DispositifDetection;
+        part def Passerelle;
+        part def InterfaceSupervision;
+
+        /* composants du dispositif */
         part def Boitier;
-        part def CarteElectronique;
-        part def MicroControleur;
-        part def ModuleGPS;
-        part def UniteRadio;
-        part def InterfaceConfiguration;
-        part def Batterie;
-        part def PanneauSolaire;
+        part def SystemeFixation;
+        part def DetecteurFeu;
         part def CapteurFumee;
         part def CapteurTemperature;
         part def CapteurHumidite;
         part def CapteurVent;
-        part def SystemeFixation;
-
-        /* composants logiques : logiciel embarqué */
-        part def LogicielEmbarque;
-        part def AcquisitionMesures;
-        part def DetectionDepartFeu;
-        part def FiltrageFaussesAlertes;
-        part def PrevisionRisque;
-        part def Localisation;
-        part def Parametrage;
-
-        /* composants logiques : application de supervision du QG */
-        part def AppSupervision;
-        part def TableauAlertes;
-        part def CarteLocalisation;
-        part def EtatSysteme;
-        part def JournalEvenements;
+        part def Cameras;
+        part def UniteTraitement;
+        part def LogicielAnalyse;
+        part def ModuleRadio;
+        part def Antenne;
+        part def ModuleLocalisation;
+        part def ModuleEnergie;
+        part def Batterie;
+        part def PanneauSolaire;
     }
 
-    /* architectures*/
+    /* architecture */
     package architecture {
         private import architectureSysteme::definitions::*;
 
-        /* architecture physique */
         part sdff : DetectionFeuForet {
-            part boitier : Boitier;
-            part carteElectronique : CarteElectronique {
-                part microControleur : MicroControleur;
-                part moduleGPS : ModuleGPS;
-                part uniteRadio : UniteRadio;
-                part interfaceConfiguration : InterfaceConfiguration;
+
+            /* noeuds de détection disséminés en forêt */
+            part noeud : DispositifDetection [1..*] {
+                part boitier : Boitier;
+                part systemeFixation : SystemeFixation;
+                part detecteur : DetecteurFeu {
+                    part capteurFumee : CapteurFumee;
+                    part capteurTemperature : CapteurTemperature;
+                    part capteurHumidite : CapteurHumidite;
+                    part capteurVent : CapteurVent;
+                    part cameras : Cameras [0..*];
+                }
+                part uniteTraitement : UniteTraitement {
+                    part logicielAnalyse : LogicielAnalyse;
+                }
+                part moduleRadio : ModuleRadio {
+                    part antenne : Antenne;
+                }
+                part moduleEnergie : ModuleEnergie {
+                    part batterie : Batterie;
+                    part panneauSolaire : PanneauSolaire;
+                }
+                part localisation : ModuleLocalisation;
             }
-            part capteurFumee : CapteurFumee;
-            part capteurTemperature : CapteurTemperature;
-            part capteurHumidite : CapteurHumidite;
-            part capteurVent : CapteurVent;
-            part batterie : Batterie;
-            part panneauSolaire : PanneauSolaire;
-            part systemeFixation : SystemeFixation;
-        }
 
-        /* architecture logique : logiciel embarqué sur le microcontrôleur */
-        part logicielEmbarque : LogicielEmbarque {
-            part acquisition : AcquisitionMesures;
-            part detection : DetectionDepartFeu;
-            part filtrage : FiltrageFaussesAlertes;
-            part prevision : PrevisionRisque;
-            part localisation : Localisation;
-            part parametrage : Parametrage;
-        }
+            /* passerelle : relais radio longue portée vers le réseau */
+            part passerelle : Passerelle;
 
-        /* architecture logique : application de supervision au quartier général */
-        part appSupervision : AppSupervision {
-            part alertes : TableauAlertes;
-            part carte : CarteLocalisation;
-            part etat : EtatSysteme;
-            part journal : JournalEvenements;
+            /* interface de supervision au quartier général */
+            part supervision : InterfaceSupervision;
         }
     }
 }
