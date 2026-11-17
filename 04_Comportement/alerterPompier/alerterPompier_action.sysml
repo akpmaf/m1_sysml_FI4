@@ -4,13 +4,13 @@ package sdff {
     action alerterPompier {
         attribute dispositifActif : Boolean;
         attribute departFeuDetecte : Boolean;
-        attribute aucunDepartFeu : Boolean;
         attribute accuseReceptionRecu : Boolean;
-        attribute accuseReceptionAbsent : Boolean;
+        attribute essaisEpuises : Boolean;
 
         action surveillerEnvironnement;
         action composerAlerte;
         action envoyerAlerteRadio;
+        action abandonnerEnvoi;
         action relayerAlerteAuxSecours;
         merge merge0;
         decide decide0;
@@ -21,13 +21,15 @@ package sdff {
         succession start if dispositifActif then merge0;
         then surveillerEnvironnement;
         then decide0;
-            if aucunDepartFeu then merge0;
             if departFeuDetecte then composerAlerte;
+            else merge0;
         succession composerAlerte then merge1;
         then envoyerAlerteRadio;
         then decide1;
-            if accuseReceptionAbsent then merge1;
             if accuseReceptionRecu then relayerAlerteAuxSecours;
+            if essaisEpuises then abandonnerEnvoi;
+            else merge1;
+        succession abandonnerEnvoi then done;
         succession relayerAlerteAuxSecours then done;
     }
 }

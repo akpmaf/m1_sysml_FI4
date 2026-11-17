@@ -1,59 +1,47 @@
 package sdff {
     private import sdff::parts::*;
 
-    part def DetecteurFeu;
-    part def DispositifDetection;
-    part def ModuleRadio;
-    part def Passerelle;
-    part def InfrastructureReceptionDistante;
-     
-
-    part def Alerte;
-    part def AccuseReception;
-    part def StatutEnvoi;
-
     package sequences {
 
         // Scénario 1 : alerte relayée au premier envoi
         occurrence alerterPompierS1 {
             part detecteur : DetecteurFeu;
-            part dispositif : DispositifDetection;
+            part uniteTraitement : UniteTraitement;
             part moduleRadio : ModuleRadio;
             part passerelle : Passerelle;
             part infrastructureDistante : InfrastructureReceptionDistante;
+            part servicesSecours : ServicesSecours;
 
-            message alerterPompier from detecteur to dispositif;
-            message envoyer of Alerte from dispositif to moduleRadio;
-            message transmettre of Alerte from moduleRadio to passerelle;
-            message relayer of Alerte from passerelle to infrastructureDistante;
-            message from infrastructureDistante to passerelle;
-            message accuse of AccuseReception from passerelle to moduleRadio;
-            message from moduleRadio to dispositif;
-            message from dispositif to detecteur;
+            message declencherDetection of Mesures from detecteur to uniteTraitement;
+            message envoyerAlerte1 of Alerte from uniteTraitement to moduleRadio;
+            message transmettre1 of Alerte from moduleRadio to passerelle;
+            message relayer1 of Alerte from passerelle to infrastructureDistante;
+            message recevoir1 from infrastructureDistante to servicesSecours;
+            message accuserReception1 of AccuseReception from infrastructureDistante to passerelle;
+            message retourner1 of AccuseReception from passerelle to moduleRadio;
+            message confirmer1 of StatutEnvoi from moduleRadio to uniteTraitement;
         }
 
         // Scénario 2 : premier envoi sans accusé, puis renvoi
         occurrence alerterPompierS2 {
             part detecteur : DetecteurFeu;
-            part dispositif : DispositifDetection;
+            part uniteTraitement : UniteTraitement;
             part moduleRadio : ModuleRadio;
             part passerelle : Passerelle;
-            infrastructureDistante : InfrastructureReceptionDistante;
+            part infrastructureDistante : InfrastructureReceptionDistante;
+            part servicesSecours : ServicesSecours;
 
-            message alerterPompier from detecteur to dispositif;
-
-            message envoyer of Alerte from dispositif to moduleRadio;
-            message transmettre of Alerte from moduleRadio to passerelle;
-            message statut of StatutEnvoi from moduleRadio to dispositif;
-
-            message envoyer of Alerte from dispositif to moduleRadio;
-            message transmettre of Alerte from moduleRadio to passerelle;
-            message relayer of Alerte from passerelle to infrastructureDistante;
-            message from infrastructureDistante to passerelle;
-            message accuse of AccuseReception from passerelle to moduleRadio;
-            message from moduleRadio to dispositif;
-
-            message from dispositif to detecteur;
+            message declencherDetection of Mesures from detecteur to uniteTraitement;
+            message envoyerAlerte1 of Alerte from uniteTraitement to moduleRadio;
+            message transmettre1 of Alerte from moduleRadio to passerelle;
+            message signalerEchec1 of StatutEnvoi from moduleRadio to uniteTraitement;
+            message envoyerAlerte2 of Alerte from uniteTraitement to moduleRadio;
+            message transmettre2 of Alerte from moduleRadio to passerelle;
+            message relayer1 of Alerte from passerelle to infrastructureDistante;
+            message recevoir1 from infrastructureDistante to servicesSecours;
+            message accuserReception1 of AccuseReception from infrastructureDistante to passerelle;
+            message retourner1 of AccuseReception from passerelle to moduleRadio;
+            message confirmer2 of StatutEnvoi from moduleRadio to uniteTraitement;
         }
     }
-    }
+}

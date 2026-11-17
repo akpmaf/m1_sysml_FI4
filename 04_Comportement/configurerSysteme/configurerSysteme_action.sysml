@@ -3,6 +3,7 @@ package sdff {
 
     action configurerSysteme {
         attribute communicationEtablie : Boolean;
+        attribute essaisEpuises : Boolean;
 
         action lancerRechercheDispositif;
         action etablirCommunicationAvecDispositif;
@@ -12,19 +13,22 @@ package sdff {
         action verifierConfiguration;
         action enregistrerConfiguration;
         action confirmerConfiguration;
+        action abandonnerConfiguration;
 
-    // debut du code 
+        merge mergeRecherche;
+        decide decideCommunication;
 
-        
         first start;
+        then mergeRecherche;
         then lancerRechercheDispositif;
         then etablirCommunicationAvecDispositif;
-        then decide decide0;
-            if not communicationEtablie then lancerRechercheDispositif;
+        then decideCommunication;
             if communicationEtablie then configurerCommunicationRadio;
+            if essaisEpuises then abandonnerConfiguration;
+            else mergeRecherche;
+        succession abandonnerConfiguration then done;
 
-        first configurerCommunicationRadio;
-        then configurerParametresDetection;
+        succession configurerCommunicationRadio then configurerParametresDetection;
         then configurerLocalisation;
         then verifierConfiguration;
         then enregistrerConfiguration;

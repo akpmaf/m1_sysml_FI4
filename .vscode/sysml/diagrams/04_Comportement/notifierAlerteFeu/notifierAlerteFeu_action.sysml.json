@@ -1,0 +1,569 @@
+{
+  "version": 9,
+  "structuredDefaults": "inherited",
+  "anchors": {
+    "sdff": {
+      "afv": {
+        "layout": {
+          "sdff::notifierAlerteFeu": {
+            "x": 22,
+            "y": 22,
+            "parentKey": null,
+            "w": 1524,
+            "h": 1396
+          },
+          "sdff::notifierAlerteFeu/__initial__": {
+            "x": 411,
+            "y": 62,
+            "parentKey": "sdff::notifierAlerteFeu",
+            "w": 12,
+            "h": 12,
+            "placedByHand": true
+          },
+          "sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::recevoirDonneesCapteurs": {
+            "x": 328.5,
+            "y": 146,
+            "parentKey": "sdff::notifierAlerteFeu",
+            "w": 177,
+            "h": 58,
+            "placedByHand": true
+          },
+          "sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::analyserDonnees": {
+            "x": 333,
+            "y": 231,
+            "parentKey": "sdff::notifierAlerteFeu",
+            "w": 168,
+            "h": 58,
+            "placedByHand": true
+          },
+          "sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::poursuivreSurveillance": {
+            "x": 94,
+            "y": 456,
+            "parentKey": "sdff::notifierAlerteFeu",
+            "w": 171,
+            "h": 58,
+            "placedByHand": true
+          },
+          "sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::genererAlerte": {
+            "x": 875.2256500553972,
+            "y": 503.8536832700679,
+            "parentKey": "sdff::notifierAlerteFeu",
+            "w": 168,
+            "h": 58,
+            "placedByHand": true
+          },
+          "sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::transmettreNotification": {
+            "x": 1130.1591007755599,
+            "y": 508.30498338086227,
+            "parentKey": "sdff::notifierAlerteFeu",
+            "w": 177,
+            "h": 58,
+            "placedByHand": true
+          },
+          "sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::notifierOperateurQG": {
+            "x": 667.0308504985741,
+            "y": 492.7254329930822,
+            "parentKey": "sdff::notifierAlerteFeu",
+            "w": 168,
+            "h": 58,
+            "placedByHand": true
+          },
+          "sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::consulterAlerte": {
+            "x": 1318.4204496122202,
+            "y": 508.30498338086227,
+            "parentKey": "sdff::notifierAlerteFeu",
+            "w": 168,
+            "h": 58,
+            "placedByHand": true
+          },
+          "sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::decideFeu": {
+            "x": 364,
+            "y": 331,
+            "parentKey": "sdff::notifierAlerteFeu",
+            "w": 112,
+            "h": 48,
+            "placedByHand": true
+          },
+          "sdff::notifierAlerteFeu/sdff::notifierAlerteFeu::mergeSurveillance": {
+            "x": 323,
+            "y": 516,
+            "parentKey": "sdff::notifierAlerteFeu",
+            "w": 192,
+            "h": 48,
+            "placedByHand": true
+          },
+          "sdff::notifierAlerteFeu/__final__": {
+            "x": 566.3230498338086,
+            "y": 621.8131362061155,
+            "parentKey": "sdff::notifierAlerteFeu",
+            "w": 16,
+            "h": 16,
+            "placedByHand": true
+          },
+          "sdff::notifierAlerteFeu::feuDetecte": {
+            "x": 66.45130011079425,
+            "y": 627.7937430753592,
+            "parentKey": "sdff::notifierAlerteFeu",
+            "w": 168,
+            "h": 58,
+            "placedByHand": true
+          },
+          "sdff::notifierAlerteFeu::alerteGeneree": {
+            "x": 276.25650055397125,
+            "y": 643.853683270068,
+            "parentKey": "sdff::notifierAlerteFeu",
+            "w": 177,
+            "h": 58,
+            "placedByHand": true
+          }
+        },
+        "ports": {},
+        "edgeRoutes": {},
+        "edgeAnchors": {},
+        "edgeGeometry": {
+          "route:v2:%5B%22succession%22%2C%22%22%2C%22%5B%5C%22sdff%3A%3AnotifierAlerteFeu%5C%22%2C%5C%22ThenActionMember%5C%22%2C%5C%22succession%5C%22%2C%5C%22t0%3A%3A__initial__%5C%22%2C%5C%22t0%3A%3Asdff%3A%3AnotifierAlerteFeu%3A%3ArecevoirDonneesCapteurs%5C%22%5D%3A1%22%2C%22sdff%3A%3AnotifierAlerteFeu%2F__initial__%22%2C%22sdff%3A%3AnotifierAlerteFeu%2Fsdff%3A%3AnotifierAlerteFeu%3A%3ArecevoirDonneesCapteurs%22%5D": {
+            "sourceHandle": "bottom",
+            "targetHandle": "top",
+            "path": "M 439,96 L 439,168",
+            "lineStyle": "orthogonal",
+            "sourcePoint": {
+              "x": 439,
+              "y": 96
+            },
+            "targetPoint": {
+              "x": 439,
+              "y": 168
+            },
+            "label": {
+              "x": 439,
+              "y": 132
+            },
+            "points": [
+              {
+                "x": 439,
+                "y": 96
+              },
+              {
+                "x": 439,
+                "y": 168
+              }
+            ],
+            "corner": 8
+          },
+          "route:v2:%5B%22succession%22%2C%22%22%2C%22%5B%5C%22sdff%3A%3AnotifierAlerteFeu%5C%22%2C%5C%22ThenActionMember%5C%22%2C%5C%22succession%5C%22%2C%5C%22t0%3A%3Asdff%3A%3AnotifierAlerteFeu%3A%3ArecevoirDonneesCapteurs%5C%22%2C%5C%22t0%3A%3Asdff%3A%3AnotifierAlerteFeu%3A%3AanalyserDonnees%5C%22%5D%3A1%22%2C%22sdff%3A%3AnotifierAlerteFeu%2Fsdff%3A%3AnotifierAlerteFeu%3A%3ArecevoirDonneesCapteurs%22%2C%22sdff%3A%3AnotifierAlerteFeu%2Fsdff%3A%3AnotifierAlerteFeu%3A%3AanalyserDonnees%22%5D": {
+            "sourceHandle": "bottom",
+            "targetHandle": "top",
+            "path": "M 439,226 L 439,230.5 Q 439,235 434.5,235 L 341,235 Q 336.5,235 336.5,239.5 L 336.5,239.5 Q 336.5,244 341,244 L 434.5,244 Q 439,244 439,248.5 L 439,253",
+            "lineStyle": "orthogonal",
+            "sourcePoint": {
+              "x": 439,
+              "y": 226
+            },
+            "targetPoint": {
+              "x": 439,
+              "y": 253
+            },
+            "label": {
+              "x": 336.5,
+              "y": 239.5
+            },
+            "points": [
+              {
+                "x": 439,
+                "y": 226
+              },
+              {
+                "x": 439,
+                "y": 235
+              },
+              {
+                "x": 336.5,
+                "y": 235
+              },
+              {
+                "x": 336.5,
+                "y": 244
+              },
+              {
+                "x": 439,
+                "y": 244
+              },
+              {
+                "x": 439,
+                "y": 253
+              }
+            ],
+            "corner": 8
+          },
+          "route:v2:%5B%22succession%22%2C%22%22%2C%22%5B%5C%22sdff%3A%3AnotifierAlerteFeu%5C%22%2C%5C%22ThenActionMember%5C%22%2C%5C%22succession%5C%22%2C%5C%22t0%3A%3Asdff%3A%3AnotifierAlerteFeu%3A%3AanalyserDonnees%5C%22%2C%5C%22t0%3A%3Asdff%3A%3AnotifierAlerteFeu%3A%3AdecideFeu%5C%22%5D%3A1%22%2C%22sdff%3A%3AnotifierAlerteFeu%2Fsdff%3A%3AnotifierAlerteFeu%3A%3AanalyserDonnees%22%2C%22sdff%3A%3AnotifierAlerteFeu%2Fsdff%3A%3AnotifierAlerteFeu%3A%3AdecideFeu%22%5D": {
+            "sourceHandle": "bottom",
+            "targetHandle": "top",
+            "path": "M 439,311 L 439,333.5 Q 439,335 440.5,335 L 440.5,335 Q 442,335 442,336.5 L 442,353",
+            "lineStyle": "orthogonal",
+            "sourcePoint": {
+              "x": 439,
+              "y": 311
+            },
+            "targetPoint": {
+              "x": 442,
+              "y": 353
+            },
+            "label": {
+              "x": 439,
+              "y": 333.5
+            },
+            "points": [
+              {
+                "x": 439,
+                "y": 311
+              },
+              {
+                "x": 439,
+                "y": 335
+              },
+              {
+                "x": 442,
+                "y": 335
+              },
+              {
+                "x": 442,
+                "y": 353
+              }
+            ],
+            "corner": 8
+          },
+          "route:v2:%5B%22succession%22%2C%22%22%2C%22%5B%5C%22sdff%3A%3AnotifierAlerteFeu%5C%22%2C%5C%22IfActionNode%5C%22%2C%5C%22succession%5C%22%2C%5C%22t0%3A%3Asdff%3A%3AnotifierAlerteFeu%3A%3AdecideFeu%5C%22%2C%5C%22t0%3A%3Asdff%3A%3AnotifierAlerteFeu%3A%3ApoursuivreSurveillance%5C%22%5D%3A1%22%2C%22sdff%3A%3AnotifierAlerteFeu%2Fsdff%3A%3AnotifierAlerteFeu%3A%3AdecideFeu%22%2C%22sdff%3A%3AnotifierAlerteFeu%2Fsdff%3A%3AnotifierAlerteFeu%3A%3ApoursuivreSurveillance%22%5D": {
+            "caption": {
+              "x": 200,
+              "y": 368,
+              "width": 120,
+              "height": 18,
+              "lines": [
+                "[not feuDetecte]"
+              ],
+              "text": "[not feuDetecte]",
+              "source": {
+                "x": 386,
+                "y": 377
+              },
+              "target": {
+                "x": 201.5,
+                "y": 478
+              },
+              "lineStyle": "orthogonal",
+              "conflicts": 0,
+              "crossings": 0
+            },
+            "sourceHandle": "left",
+            "targetHandle": "top",
+            "path": "M 386,377 L 209.5,377 Q 201.5,377 201.5,385 L 201.5,478",
+            "lineStyle": "orthogonal",
+            "sourcePoint": {
+              "x": 386,
+              "y": 377
+            },
+            "targetPoint": {
+              "x": 201.5,
+              "y": 478
+            },
+            "label": {
+              "x": 243.25,
+              "y": 377
+            },
+            "points": [
+              {
+                "x": 386,
+                "y": 377
+              },
+              {
+                "x": 201.5,
+                "y": 377
+              },
+              {
+                "x": 201.5,
+                "y": 478
+              }
+            ],
+            "corner": 8
+          },
+          "route:v2:%5B%22succession%22%2C%22%22%2C%22%5B%5C%22sdff%3A%3AnotifierAlerteFeu%5C%22%2C%5C%22ThenActionMember%5C%22%2C%5C%22succession%5C%22%2C%5C%22t0%3A%3Asdff%3A%3AnotifierAlerteFeu%3A%3AdecideFeu%5C%22%2C%5C%22t0%3A%3Asdff%3A%3AnotifierAlerteFeu%3A%3AmergeSurveillance%5C%22%5D%3A1%22%2C%22sdff%3A%3AnotifierAlerteFeu%2Fsdff%3A%3AnotifierAlerteFeu%3A%3AdecideFeu%22%2C%22sdff%3A%3AnotifierAlerteFeu%2Fsdff%3A%3AnotifierAlerteFeu%3A%3AmergeSurveillance%22%5D": {
+            "sourceHandle": "bottom:0.125",
+            "targetHandle": "top",
+            "path": "M 400,383 L 400,512 Q 400,520 408,520 L 433,520 Q 441,520 441,528 L 441,538",
+            "lineStyle": "orthogonal",
+            "sourcePoint": {
+              "x": 400,
+              "y": 383
+            },
+            "targetPoint": {
+              "x": 441,
+              "y": 538
+            },
+            "label": {
+              "x": 400,
+              "y": 481
+            },
+            "points": [
+              {
+                "x": 400,
+                "y": 383
+              },
+              {
+                "x": 400,
+                "y": 520
+              },
+              {
+                "x": 441,
+                "y": 520
+              },
+              {
+                "x": 441,
+                "y": 538
+              }
+            ],
+            "corner": 8
+          },
+          "route:v2:%5B%22succession%22%2C%22%22%2C%22%5B%5C%22sdff%3A%3AnotifierAlerteFeu%5C%22%2C%5C%22IfActionNode%5C%22%2C%5C%22succession%5C%22%2C%5C%22t0%3A%3Asdff%3A%3AnotifierAlerteFeu%3A%3AdecideFeu%5C%22%2C%5C%22t0%3A%3Asdff%3A%3AnotifierAlerteFeu%3A%3AgenererAlerte%5C%22%5D%3A1%22%2C%22sdff%3A%3AnotifierAlerteFeu%2Fsdff%3A%3AnotifierAlerteFeu%3A%3AdecideFeu%22%2C%22sdff%3A%3AnotifierAlerteFeu%2Fsdff%3A%3AnotifierAlerteFeu%3A%3AgenererAlerte%22%5D": {
+            "caption": {
+              "x": 509.5165132452548,
+              "y": 398,
+              "width": 95,
+              "height": 18,
+              "lines": [
+                "[feuDetecte]"
+              ],
+              "text": "[feuDetecte]",
+              "source": {
+                "x": 470,
+                "y": 389
+              },
+              "target": {
+                "x": 981.2256500553972,
+                "y": 525.8536832700679
+              },
+              "lineStyle": "orthogonal",
+              "conflicts": 0,
+              "crossings": 0
+            },
+            "sourceHandle": "bottom:0.750",
+            "targetHandle": "top",
+            "path": "M 470,389 L 470,399 Q 470,407 478,407 L 973.226,407 Q 981.226,407 981.226,415 L 981.226,525.854",
+            "lineStyle": "orthogonal",
+            "sourcePoint": {
+              "x": 470,
+              "y": 389
+            },
+            "targetPoint": {
+              "x": 981.2256500553972,
+              "y": 525.8536832700679
+            },
+            "label": {
+              "x": 776.0396666627325,
+              "y": 407
+            },
+            "points": [
+              {
+                "x": 470,
+                "y": 389
+              },
+              {
+                "x": 470,
+                "y": 407
+              },
+              {
+                "x": 981.2256500553972,
+                "y": 407
+              },
+              {
+                "x": 981.2256500553972,
+                "y": 525.8536832700679
+              }
+            ],
+            "corner": 8
+          },
+          "route:v2:%5B%22succession%22%2C%22%22%2C%22%5B%5C%22sdff%3A%3AnotifierAlerteFeu%5C%22%2C%5C%22ThenActionMember%5C%22%2C%5C%22succession%5C%22%2C%5C%22t0%3A%3Asdff%3A%3AnotifierAlerteFeu%3A%3AdecideFeu%5C%22%2C%5C%22t0%3A%3Asdff%3A%3AnotifierAlerteFeu%3A%3AtransmettreNotification%5C%22%5D%3A1%22%2C%22sdff%3A%3AnotifierAlerteFeu%2Fsdff%3A%3AnotifierAlerteFeu%3A%3AdecideFeu%22%2C%22sdff%3A%3AnotifierAlerteFeu%2Fsdff%3A%3AnotifierAlerteFeu%3A%3AtransmettreNotification%22%5D": {
+            "sourceHandle": "bottom",
+            "targetHandle": "top",
+            "path": "M 442,401 L 442,411 Q 442,419 450,419 L 1232.659,419 Q 1240.659,419 1240.659,427 L 1240.659,530.305",
+            "lineStyle": "orthogonal",
+            "sourcePoint": {
+              "x": 442,
+              "y": 401
+            },
+            "targetPoint": {
+              "x": 1240.6591007755599,
+              "y": 530.3049833808623
+            },
+            "label": {
+              "x": 887.9820420782111,
+              "y": 419
+            },
+            "points": [
+              {
+                "x": 442,
+                "y": 401
+              },
+              {
+                "x": 442,
+                "y": 419
+              },
+              {
+                "x": 1240.6591007755599,
+                "y": 419
+              },
+              {
+                "x": 1240.6591007755599,
+                "y": 530.3049833808623
+              }
+            ],
+            "corner": 8
+          },
+          "route:v2:%5B%22succession%22%2C%22%22%2C%22%5B%5C%22sdff%3A%3AnotifierAlerteFeu%5C%22%2C%5C%22ThenActionMember%5C%22%2C%5C%22succession%5C%22%2C%5C%22t0%3A%3Asdff%3A%3AnotifierAlerteFeu%3A%3AdecideFeu%5C%22%2C%5C%22t0%3A%3Asdff%3A%3AnotifierAlerteFeu%3A%3AnotifierOperateurQG%5C%22%5D%3A1%22%2C%22sdff%3A%3AnotifierAlerteFeu%2Fsdff%3A%3AnotifierAlerteFeu%3A%3AdecideFeu%22%2C%22sdff%3A%3AnotifierAlerteFeu%2Fsdff%3A%3AnotifierAlerteFeu%3A%3AnotifierOperateurQG%22%5D": {
+            "sourceHandle": "bottom:0.375",
+            "targetHandle": "top",
+            "path": "M 428,395 L 428,488.725 Q 428,496.725 436,496.725 L 765.031,496.725 Q 773.031,496.725 773.031,504.725 L 773.031,514.725",
+            "lineStyle": "orthogonal",
+            "sourcePoint": {
+              "x": 428,
+              "y": 395
+            },
+            "targetPoint": {
+              "x": 773.0308504985741,
+              "y": 514.7254329930822
+            },
+            "label": {
+              "x": 558.6527087527459,
+              "y": 496.7254329930822
+            },
+            "points": [
+              {
+                "x": 428,
+                "y": 395
+              },
+              {
+                "x": 428,
+                "y": 496.7254329930822
+              },
+              {
+                "x": 773.0308504985741,
+                "y": 496.7254329930822
+              },
+              {
+                "x": 773.0308504985741,
+                "y": 514.7254329930822
+              }
+            ],
+            "corner": 8
+          },
+          "route:v2:%5B%22succession%22%2C%22%22%2C%22%5B%5C%22sdff%3A%3AnotifierAlerteFeu%5C%22%2C%5C%22ThenActionMember%5C%22%2C%5C%22succession%5C%22%2C%5C%22t0%3A%3Asdff%3A%3AnotifierAlerteFeu%3A%3AdecideFeu%5C%22%2C%5C%22t0%3A%3Asdff%3A%3AnotifierAlerteFeu%3A%3AconsulterAlerte%5C%22%5D%3A1%22%2C%22sdff%3A%3AnotifierAlerteFeu%2Fsdff%3A%3AnotifierAlerteFeu%3A%3AdecideFeu%22%2C%22sdff%3A%3AnotifierAlerteFeu%2Fsdff%3A%3AnotifierAlerteFeu%3A%3AconsulterAlerte%22%5D": {
+            "sourceHandle": "right",
+            "targetHandle": "top",
+            "path": "M 498,377 L 1416.42,377 Q 1424.42,377 1424.42,385 L 1424.42,530.305",
+            "lineStyle": "orthogonal",
+            "sourcePoint": {
+              "x": 498,
+              "y": 377
+            },
+            "targetPoint": {
+              "x": 1424.4204496122202,
+              "y": 530.3049833808623
+            },
+            "label": {
+              "x": 1037.8627164965412,
+              "y": 377
+            },
+            "points": [
+              {
+                "x": 498,
+                "y": 377
+              },
+              {
+                "x": 1424.4204496122202,
+                "y": 377
+              },
+              {
+                "x": 1424.4204496122202,
+                "y": 530.3049833808623
+              }
+            ],
+            "corner": 8
+          },
+          "route:v2:%5B%22succession%22%2C%22%22%2C%22%5B%5C%22sdff%3A%3AnotifierAlerteFeu%5C%22%2C%5C%22ThenActionMember%5C%22%2C%5C%22succession%5C%22%2C%5C%22t0%3A%3Asdff%3A%3AnotifierAlerteFeu%3A%3AdecideFeu%5C%22%2C%5C%22t0%3A%3A__final__%5C%22%5D%3A1%22%2C%22sdff%3A%3AnotifierAlerteFeu%2Fsdff%3A%3AnotifierAlerteFeu%3A%3AdecideFeu%22%2C%22sdff%3A%3AnotifierAlerteFeu%2F__final__%22%5D": {
+            "sourceHandle": "bottom:0.250",
+            "targetHandle": "top",
+            "path": "M 414,389 L 414,508.407 Q 414,516.407 422,516.407 L 588.323,516.407 Q 596.323,516.407 596.323,524.407 L 596.323,643.813",
+            "lineStyle": "orthogonal",
+            "sourcePoint": {
+              "x": 414,
+              "y": 389
+            },
+            "targetPoint": {
+              "x": 596.3230498338086,
+              "y": 643.8131362061155
+            },
+            "label": {
+              "x": 505.16152491690434,
+              "y": 516.4065681030577
+            },
+            "points": [
+              {
+                "x": 414,
+                "y": 389
+              },
+              {
+                "x": 414,
+                "y": 516.4065681030577
+              },
+              {
+                "x": 596.3230498338086,
+                "y": 516.4065681030577
+              },
+              {
+                "x": 596.3230498338086,
+                "y": 643.8131362061155
+              }
+            ],
+            "corner": 8
+          },
+          "route:v2:%5B%22succession%22%2C%22%22%2C%22%5B%5C%22sdff%3A%3AnotifierAlerteFeu%5C%22%2C%5C%22SuccessionStmt%5C%22%2C%5C%22succession%5C%22%2C%5C%22t0%3A%3Asdff%3A%3AnotifierAlerteFeu%3A%3AmergeSurveillance%5C%22%2C%5C%22t0%3A%3Asdff%3A%3AnotifierAlerteFeu%3A%3ArecevoirDonneesCapteurs%5C%22%5D%3A1%22%2C%22sdff%3A%3AnotifierAlerteFeu%2Fsdff%3A%3AnotifierAlerteFeu%3A%3AmergeSurveillance%22%2C%22sdff%3A%3AnotifierAlerteFeu%2Fsdff%3A%3AnotifierAlerteFeu%3A%3ArecevoirDonneesCapteurs%22%5D": {
+            "sourceHandle": "left",
+            "targetHandle": "left",
+            "path": "M 345,562 L 335,562 Q 327,562 327,554 L 327,205 Q 327,197 335,197 L 350.5,197",
+            "lineStyle": "orthogonal",
+            "sourcePoint": {
+              "x": 345,
+              "y": 562
+            },
+            "targetPoint": {
+              "x": 350.5,
+              "y": 197
+            },
+            "label": {
+              "x": 327,
+              "y": 376.75
+            },
+            "points": [
+              {
+                "x": 345,
+                "y": 562
+              },
+              {
+                "x": 327,
+                "y": 562
+              },
+              {
+                "x": 327,
+                "y": 197
+              },
+              {
+                "x": 350.5,
+                "y": 197
+              }
+            ],
+            "corner": 8
+          }
+        }
+      }
+    }
+  }
+}
