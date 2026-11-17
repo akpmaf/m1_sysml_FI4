@@ -47,7 +47,7 @@ package sdff {
         then decideInstallation;
             if connexionsCorrectes then demarrerSysteme;
             else mergeCorr;
-        succession first mergeCorr then corrigerProblemes;
+        succession first  mergeCorr then corrigerProblemes;
         succession first corrigerProblemes then mergeInstallation;
         succession first demarrerSysteme then testerFonctionnement;
 
