@@ -26,9 +26,9 @@ package sdff {
             if communicationEtablie then configurerCommunicationRadio;
             if essaisEpuises then abandonnerConfiguration;
             else mergeRecherche;
-        succession abandonnerConfiguration then done;
+        succession first abandonnerConfiguration then done;
 
-        succession configurerCommunicationRadio then configurerParametresDetection;
+        succession first configurerCommunicationRadio then configurerParametresDetection;
         then configurerLocalisation;
         then verifierConfiguration;
         then enregistrerConfiguration;
